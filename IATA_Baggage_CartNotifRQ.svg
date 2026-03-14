@@ -1,0 +1,3268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:ns0="metadata" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="3330" onload="prepareSVG()" version="1.1" width="1733.7">
+<style>* {
+	user-select: none;
+}
+.se {
+	cursor: pointer;
+}
+.el {
+	cursor: pointer;
+}
+.at {
+	cursor: pointer;
+}
+.se circle {
+	fill: black;
+}
+.se ellipse:hover{
+	fill: #e6e6e6;
+}
+.co ellipse {
+	fill: black;
+}
+.co line{
+	stroke: white;
+}
+.co circle {
+	fill: white;
+}
+.any {
+	fill: #e6e6e6;
+}
+.hd {
+	visibility: hidden;
+}
+line, ellipse, rectangle, circle, g {
+	fill: white;
+	stroke: black;
+}
+text {
+	fill: black;
+	stroke: none;
+	font-family: 'Source Code Pro', monospace;
+}
+.hi rect {
+	fill: #fac832;
+	stroke: black;
+}
+.hi text {
+	stroke: none;
+}
+.el.op {
+	stroke: #666;	
+}
+.el.op text {
+	fill: #666;
+}
+.el.ma {
+	stroke: #1e32fa;
+}
+.el.ma text {
+	fill: #1e32fa;
+}
+.at {
+	stroke: #5a14a0;
+}
+.at text {
+	fill: #5a14a0;
+}
+.el.ke {
+	stroke: #289632;
+}
+.el.ke text {
+	fill: #289632;
+}
+.el.kr {
+	stroke: #f050c8;
+}
+.el.kr text {
+	fill: #f050c8;
+}
+.el.red, .at.red {
+	fill: #f0463250;
+}</style>
+  <script type="text/ecmascript">
+function prepareSVG() {
+	var root = document.getElementById('_0');
+	document.getElementById('_0_0a').onclick = expandAll;
+	document.getElementById('_0_0_0b').onclick = collapseAll;
+}
+
+
+function expandAll() {
+	var indexes = [0, 0];
+	var id;
+	var y = delta_y;
+	var ymins = [y];
+	var ymaxs = [y];
+	var el;
+	while (true) {
+		id = '_' + indexes.join('_');
+		if (!ids.includes(id)) {
+			indexes.splice(-1, 1);
+			ymin = ymins.splice(-1, 1);
+			ymax = ymaxs.splice(-1, 1);
+			if (indexes.length == 1) {
+				break;
+			}
+			id = '_' + indexes.join('_');
+
+			el = document.getElementById(id+'_0d');
+			if (el != null) {
+				adjustY_verticalLine(el, ymin, ymax);
+			}
+
+			indexes[indexes.length-1] += 1;
+			id = '_' + indexes.join('_');
+			if (ids.includes(id)) {
+				y += delta_y;
+				ymaxs[ymaxs.length-1] = y;
+			}
+		} else {
+			el = document.getElementById(id);
+			removeAllHidden(el);
+			adjustY(el, y);
+			for (var letter of "abcdef".split('')) {
+				el = document.getElementById(id + letter);
+				if (el != null) {
+					removeAllHidden(el);
+					adjustY(el, y);
+				}
+			}
+			el = document.getElementById(id);
+			if (el.classList.contains('co')) {
+				el.classList.remove('co');
+				el.classList.add('ex');
+			}
+			indexes = indexes.concat(0);
+			ymins = ymins.concat(y);
+			ymaxs = ymaxs.concat(y);
+		}
+	}
+}
+
+
+function collapseAll() {
+	var indexes = [0, 0];
+	var y = delta_y;
+	var ymins = [y, y];
+	var id;
+	var el;
+	var el_d;
+	var numberHidden = 0;
+	while (true) {
+		id = '_' + indexes.join('_');
+		if (!ids.includes(id)) {
+			indexes.splice(-1, 1);
+			ymin = ymins.splice(-1, 1)[0];
+			if (indexes.length == 1) {
+				break;
+			}
+			id = '_' + indexes.join('_');
+			el_d = document.getElementById(id+'_0d');
+			if (el_d != null) {
+				y -= delta_y;
+			} else if (ids.includes(id+'_0') &amp;&amp; !ids.includes(id+'_1')) {
+				y -= delta_y;
+			}
+			if (el_d != null) {
+				adjustY_verticalLine(el_d, ymin, y);
+			}
+			el = document.getElementById(id);
+			
+			if (el.classList.contains('se')) {
+				numberHidden--;
+				y = ymin;
+			}
+			indexes[indexes.length-1] += 1;
+			y += delta_y;
+		} else {
+			el = document.getElementById(id);
+			adjustHidden(el, numberHidden);
+			adjustY(el, y);
+			for (var letter of "abcdef".split('')) {
+				el = document.getElementById(id + letter);
+				if (el != null) {
+					adjustHidden(el, numberHidden);
+					adjustY(el, y);
+				}
+			}
+			el = document.getElementById(id);
+			if (el.classList.contains('ex')) {
+				el.classList.remove('ex');
+				el.classList.add('co');
+			}
+			if (el.classList.contains('se')) {
+				numberHidden++;
+			}
+			indexes = indexes.concat(0);
+			ymins = ymins.concat(y);
+		}
+	}
+}
+
+
+function removeAllHidden(el) {
+	if (el.classList.contains('hd')) {
+		el.classList.remove('hd');
+		var i = 1;
+		while (el.classList.contains('hd'+i)) {
+			el.classList.remove('hd'+i);
+			i++;
+		}
+	}
+}
+
+
+function adjustHidden(el, numberHidden) {
+	var alreadyHidden = 0;
+	if (el.classList.contains('hd')) {
+		alreadyHidden = 1;
+		while (el.classList.contains('hd'+alreadyHidden)) {
+			alreadyHidden++;
+		}
+	}
+	for (var i=alreadyHidden; i&lt;numberHidden; i++) {
+		addHidden(el);
+	}
+}
+
+
+function adjustY(el, y) {
+	// elements and horizontal lines
+	if (el.tagName === 'line') {
+		el.setAttribute('y1', y);
+		el.setAttribute('y2', y);
+	} else {
+		el.transform.baseVal[0].matrix.f = y;
+	}
+}
+
+
+function adjustY_verticalLine(el, ymin, ymax) {
+	el.setAttribute('y1', ymin);
+	el.setAttribute('y2', ymax);
+}
+
+
+function addHidden(el) {
+	if (!el.classList.contains('hd')) {
+		el.classList.add('hd');
+	} else {
+		var i = 1;
+		while (el.classList.contains('hd'+i)) {
+			i++;
+		}
+		el.classList.add('hd'+i);
+	}
+}
+
+
+function removeHidden(el) {
+	if (!el.classList.contains('hd1')) {
+		el.classList.remove('hd');
+	} else {
+		var i = 1;
+		while (el.classList.contains('hd'+i)) {
+			i++;
+		}
+		el.classList.remove('hd'+(i-1));
+	}
+}
+
+
+function t(sel) {
+	/* toggle */
+	hiding = sel.classList.contains('ex');
+	sel.classList.toggle('ex');
+	sel.classList.toggle('co');
+
+	y_start = sel.transform.baseVal[0].matrix.f;
+	y_end = y_start
+	
+	var sel_id = sel.getAttribute('id')
+	var id;
+	var el;
+	var indexes = [0]
+	while (true) {
+		id = sel_id + '_' + indexes.join('_');
+		if (!ids.includes(id)) {
+			indexes.splice(-1, 1);
+			if (indexes.length == 0) {
+				break;
+			}
+			indexes[indexes.length-1] += 1;
+		} else {
+			el = document.getElementById(id);
+			if (hiding) {
+				if (!el.classList.contains('hd')) {
+					y_end = Math.max(y_end, el.transform.baseVal[0].matrix.f);
+				}
+				addHidden(el);
+				for (letter of 'abcdef'.split('')) {
+					el = document.getElementById(id+letter);
+					if (el != null) {
+						addHidden(el);
+					}
+				}
+			} else {
+				removeHidden(el);
+				if (!el.classList.contains('hd')) {
+					y_end = Math.max(y_end, el.transform.baseVal[0].matrix.f);
+				}
+				for (letter of 'abcdef'.split('')) {
+					el = document.getElementById(id+letter);
+					if (el != null) {
+						removeHidden(el);
+					}
+				}
+			}
+			indexes = indexes.concat(0);
+		}
+	}
+	
+	dy = y_start - y_end;
+	if (!hiding) {
+		dy = -dy;
+	}
+	indexes = sel_id.split('_').map(Number);
+	indexes.splice(0, 1);
+	var root_indexes = indexes.slice();
+	var root_id = '';
+	
+	indexes[indexes.length-1] += 1;
+	id = '_' + indexes.join('_');
+	if (!ids.includes(id)) {
+		indexes.splice(-1, 1);
+		if (indexes.length == 0) {
+			return;
+		}
+		indexes[indexes.length-1] += 1;
+	}
+	while (indexes.length &gt; 1) {
+		id = '_' + indexes.join('_');
+		if (!ids.includes(id)) {
+			indexes.splice(-1, 1);
+			id = '_' + indexes.join('_');
+			root_id = '_' + root_indexes.slice(0, indexes.length).join('_');
+			if (root_id === id &amp;&amp; ids.includes(root_id+'_'+(root_indexes[indexes.length]+1))) {
+				el = document.getElementById(id+'_0d');
+				if (el != null) {
+					el.setAttribute('y2', parseFloat(el.getAttribute('y2')) + dy);
+				}
+			}
+			indexes[indexes.length-1] += 1;
+		} else {
+			translate(document.getElementById(id), dy);			
+			for (var letter of 'abcdef'.split('')) {
+				el = document.getElementById(id+letter);
+				if (el != null) {
+					translate(el, dy);
+				}
+			}
+			indexes = indexes.concat(0);
+		}
+	}
+}
+
+
+function td(sel) {
+	/* toggleDescendants */
+	window.event.preventDefault();
+	var expand_all_descendants = false;
+	if (sel.classList.contains("co")) {
+		sel.onclick();
+		expand_all_descendants = true;
+	}
+	var sel_id = sel.getAttribute('id')
+	var indexes = [0];
+	var id;
+	var el;
+	while (true) {
+		id = sel_id + '_' + indexes.join('_');
+		if (!ids.includes(id)) {
+			indexes.splice(-1, 1);
+			if (indexes.length == 0) {
+				break;
+			}
+			indexes[indexes.length-1] += 1;
+		} else {
+			el = document.getElementById(id);
+			if (el.classList.contains('se')) {
+				if (expand_all_descendants) {
+					if (el.classList.contains('co')) {
+						el.onclick();
+					}
+				} else {
+					el.onclick();
+				}
+				indexes[indexes.length-1] += 1;
+				id = sel_id + '_' + indexes.join('_');
+				if (ids.includes(id)) {
+					continue;
+				}
+				indexes.splice(-1, 1);
+				if (indexes.length == 0) {
+					break;
+				}
+				indexes[indexes.length-1] += 1;
+			} else {
+				indexes = indexes.concat(0);
+			}
+		}
+	}
+	return false;
+}
+
+
+function translate(el, dy) {
+	if (el.tagName === 'line') {
+		el.setAttribute('y1', parseFloat(el.getAttribute('y1')) + dy);
+		el.setAttribute('y2', parseFloat(el.getAttribute('y2')) + dy);
+	} else {
+		el.transform.baseVal[0].matrix.f += dy;
+	}
+}
+const ids=["_0","_0_0","_0_0_0","_0_0_0_0","_0_0_0_0_0","_0_0_0_0_0_0","_0_0_0_0_0_0_0","_0_0_0_0_0_0_0_0","_0_0_0_0_0_0_0_0_0","_0_0_0_0_0_0_0_0_0_0","_0_0_0_0_0_0_0_0_0_0_0","_0_0_0_0_0_0_0_0_1","_0_0_0_0_0_0_0_0_2","_0_0_0_0_0_0_0_0_3","_0_0_0_0_0_0_1","_0_0_0_0_0_0_1_0","_0_0_0_0_0_0_1_0_0","_0_0_0_0_0_0_1_0_1","_0_0_0_0_0_0_1_0_2","_0_0_0_0_0_0_1_0_2_0","_0_0_0_0_0_0_1_0_2_0_0","_0_0_0_0_0_0_1_0_2_0_0_0","_0_0_0_0_0_0_1_0_2_0_0_0_0","_0_0_0_0_0_0_1_0_2_0_1","_0_0_0_0_0_0_1_0_2_0_2","_0_0_0_0_0_0_1_0_2_0_2_0","_0_0_0_0_0_0_1_0_2_0_2_0_0","_0_0_0_0_0_0_1_0_2_0_2_0_1","_0_0_0_0_0_0_1_0_2_0_2_0_2","_0_0_0_0_0_0_1_0_2_0_3","_0_0_0_0_0_0_1_0_2_0_4","_0_0_0_0_0_0_1_0_2_0_4_0","_0_0_0_0_0_0_1_0_2_0_4_0_0","_0_0_0_0_0_0_1_0_2_0_4_0_1","_0_0_0_0_0_0_1_0_2_0_4_0_1_0","_0_0_0_0_0_0_1_0_2_0_4_0_1_0_0","_0_0_0_0_0_0_1_0_2_0_4_0_2","_0_0_0_0_0_0_1_0_2_0_4_0_3","_0_0_0_0_0_0_1_0_2_0_4_0_4","_0_0_0_0_0_0_1_0_2_0_4_0_5","_0_0_0_0_0_0_1_0_2_0_5","_0_0_0_0_0_0_1_0_2_0_5_0","_0_0_0_0_0_0_1_0_2_0_5_0_0","_0_0_0_0_0_0_1_0_3","_0_0_0_0_0_0_1_0_3_0","_0_0_0_0_0_0_1_0_3_0_0","_0_0_0_0_0_0_2","_0_0_0_0_0_0_3","_0_0_0_0_0_0_4","_0_0_0_0_0_0_5","_0_0_0_0_1","_0_0_0_0_1_0","_0_0_0_0_1_0_0","_0_0_0_0_1_0_1","_0_0_0_0_1_0_2","_0_0_0_0_2","_0_0_0_0_2_0","_0_0_0_0_2_0_0","_0_0_0_0_2_0_1","_0_0_0_0_2_0_1_0","_0_0_0_0_2_0_1_0_0","_0_0_0_0_3","_0_0_0_0_3_0","_0_0_0_0_3_1","_0_0_0_0_3_2","_0_0_0_0_3_3","_0_0_0_0_3_4","_0_0_0_0_3_5","_0_0_0_0_3_6","_0_0_0_0_3_7","_0_0_0_0_3_8","_0_0_0_0_4","_0_0_0_0_5","_0_0_0_0_5_0","_0_0_0_0_5_0_0","_0_0_0_0_5_0_1","_0_0_0_0_5_0_1_0","_0_0_0_0_5_0_1_0_0","_0_0_0_0_5_0_1_0_0_0","_0_0_0_0_5_0_1_0_0_0_0","_0_0_0_0_5_0_1_0_1","_0_0_0_0_5_0_1_0_2","_0_0_0_0_5_0_1_0_2_0","_0_0_0_0_5_0_1_0_2_0_0","_0_0_0_0_5_0_1_0_2_0_1","_0_0_0_0_5_0_1_0_2_0_2","_0_0_0_0_5_0_1_0_3","_0_0_0_0_5_0_1_0_4","_0_0_0_0_5_0_1_0_4_0","_0_0_0_0_5_0_1_0_4_0_0","_0_0_0_0_5_0_1_0_4_0_1","_0_0_0_0_5_0_1_0_4_0_1_0","_0_0_0_0_5_0_1_0_4_0_1_0_0","_0_0_0_0_5_0_1_0_4_0_2","_0_0_0_0_5_0_1_0_4_0_3","_0_0_0_0_5_0_1_0_4_0_4","_0_0_0_0_5_0_1_0_4_0_5","_0_0_0_0_5_0_1_0_5","_0_0_0_0_5_0_1_0_5_0","_0_0_0_0_5_0_1_0_5_0_0","_0_0_0_0_5_0_2","_0_0_0_0_5_0_3","_0_0_0_0_5_0_3_0","_0_0_0_0_5_0_3_0_0","_0_0_0_0_5_0_3_0_1","_0_0_0_0_6","_0_0_0_0_7","_0_0_0_0_7_0","_0_0_0_0_7_0_0","_0_0_0_0_7_0_1","_0_0_0_0_7_0_1_0","_0_0_0_0_7_0_1_0_0","_0_0_0_0_7_0_1_0_0_0","_0_0_0_0_7_0_1_0_0_0_0","_0_0_0_0_7_0_1_0_1","_0_0_0_0_7_0_1_0_2","_0_0_0_0_7_0_1_0_2_0","_0_0_0_0_7_0_1_0_2_0_0","_0_0_0_0_7_0_1_0_2_0_1","_0_0_0_0_7_0_1_0_2_0_2","_0_0_0_0_7_0_1_0_3","_0_0_0_0_7_0_1_0_4","_0_0_0_0_7_0_1_0_4_0","_0_0_0_0_7_0_1_0_4_0_0","_0_0_0_0_7_0_1_0_4_0_1","_0_0_0_0_7_0_1_0_4_0_1_0","_0_0_0_0_7_0_1_0_4_0_1_0_0","_0_0_0_0_7_0_1_0_4_0_2","_0_0_0_0_7_0_1_0_4_0_3","_0_0_0_0_7_0_1_0_4_0_4","_0_0_0_0_7_0_1_0_4_0_5","_0_0_0_0_7_0_1_0_5","_0_0_0_0_7_0_1_0_5_0","_0_0_0_0_7_0_1_0_5_0_0","_0_0_0_0_7_0_2","_0_0_0_0_7_0_3","_0_0_0_0_7_0_3_0","_0_0_0_0_7_0_3_0_0","_0_0_0_0_7_0_3_0_1","_0_0_0_0_8","_0_0_0_0_8_0","_0_0_0_0_8_0_0","_0_0_0_0_8_0_1","_0_0_0_0_9","_0_0_0_0_10","_0_0_0_0_10_0","_0_0_0_0_10_0_0","_0_0_0_0_10_0_0_0","_0_0_0_0_10_0_0_0_0","_0_0_0_0_10_0_0_0_1","_0_0_0_0_10_0_0_0_2","_0_0_0_0_10_0_0_0_3","_0_0_0_0_10_0_0_0_3_0","_0_0_0_0_10_0_0_0_3_1","_0_0_0_0_10_0_0_0_3_2","_0_0_0_0_10_0_0_0_3_3","_0_0_0_0_10_0_0_0_3_4","_0_0_0_0_10_0_0_0_3_5","_0_0_0_0_10_0_0_0_3_6","_0_0_0_0_10_0_0_0_3_7","_0_0_0_0_10_0_0_0_3_8","_0_0_0_0_10_0_0_0_4","_0_0_0_0_10_0_0_0_5","_0_0_0_0_10_0_0_0_6","_0_0_0_0_10_0_0_0_7","_0_0_0_0_10_0_1","_0_0_0_0_10_0_1_0","_0_0_0_0_10_0_1_0_0","_0_0_0_0_10_0_1_0_1","_0_0_0_0_10_0_1_0_1_0","_0_0_0_0_10_0_1_0_1_1","_0_0_0_0_10_0_1_0_1_2","_0_0_0_0_10_0_1_0_1_3","_0_0_0_0_10_0_1_0_1_4","_0_0_0_0_10_0_1_0_1_5","_0_0_0_0_10_0_1_0_1_6","_0_0_0_0_10_0_1_0_1_7","_0_0_0_0_10_0_1_0_1_8","_0_0_0_0_10_0_1_0_2","_0_0_0_0_10_0_1_0_3","_0_0_0_0_10_0_1_0_4","_0_0_0_0_10_0_1_0_5","_0_0_0_0_10_0_1_0_6","_0_0_1"];const delta_x = 22; const delta_y = 30;</script>
+  <defs/>
+  <g class="el ma" id="_0" transform="translate(22,30)">
+    <rect height="19.6" width="196.0" x="0" y="-9.8">
+      <title>Notification of baggage cart to airline peer (interline, joint venture) or authority</title>
+      <metadata>
+        <ns0:xd/>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">IATA_Baggage_CartNotifRQ</text>
+  </g>
+  <line id="_0_0a" x1="218.0" x2="240.0" y1="30" y2="30"/>
+  <g class="se co" id="_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 240 30)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0b" x1="276.0" x2="298.0" y1="30" y2="30" class="hd"/>
+  <line id="_0_0_0c" x1="298.0" x2="320.0" y1="30" y2="30" class="hd"/>
+  <g class="el ma hd" id="_0_0_0" transform="matrix(1 0 0 1 320 30)">
+    <rect height="19.6" width="70.6" x="0" y="-9.8">
+      <title>Active baggage cart ride including relevant details</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CartRideType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CartRide</text>
+  </g>
+  <line id="_0_0_0_0a" x1="390.6" x2="412.6" y1="30" y2="30" class="hd"/>
+  <g class="se hd co" id="_0_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 412.6 30)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0b" x1="448.6" x2="470.6" y1="30" y2="30" class="hd hd1"/>
+  <line id="_0_0_0_0_0c" x1="470.6" x2="492.6" y1="30" y2="30" class="hd hd1"/>
+  <g class="el ma hd hd1" id="_0_0_0_0_0" transform="matrix(1 0 0 1 492.6 30)">
+    <rect height="19.6" width="117.6" x="0" y="-9.8">
+      <title>A series of tasks or steps taken in order to achieve a particular end in the context of baggage logistics.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageProcessType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageProcess</text>
+  </g>
+  <line id="_0_0_0_0_0_0a" x1="610.2" x2="632.2" y1="30" y2="30" class="hd hd1"/>
+  <g class="se hd hd1 co" id="_0_0_0_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 632.2 30)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_0b" x1="668.2" x2="690.2" y1="30" y2="30" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_0_0_0c" x1="690.2" x2="712.2" y1="30" y2="30" class="hd hd1 hd2"/>
+  <text font-family="monospace" font-size="26" id="_0_0_0_0_0_0_0f" transform="matrix(1 0 0 1 712.2 30)" x="-19.5" y="-0.5" class="hd hd1 hd2">∞</text>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_0_0_0" transform="matrix(1 0 0 1 712.2 30)">
+    <rect height="19.6" stroke-dasharray="5 5" width="47.0" x="0" y="-9.8">
+      <title>A Role of an individual person to be a staff of an agency.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>AgentCollapsedType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>unbounded</ns0:maxOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Agent</text>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0a" x1="759.2" x2="781.2" y1="30" y2="30" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_0_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 781.2 30)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0_0b" x1="817.2" x2="839.2" y1="30" y2="30" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_0_0_0_0_0c" x1="839.2" x2="861.2" y1="30" y2="30" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_0_0_0_0_0" transform="matrix(1 0 0 1 861.2 30)">
+    <rect height="19.6" stroke-dasharray="5 5" width="54.9" x="0" y="-9.8">
+      <title>An organization which acts on behalf of another.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>AgencyType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Agency</text>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0_0_0a" x1="916.1" x2="938.1" y1="30" y2="30" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_0_0_0_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 938.1 30)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0_0_0_0b" x1="974.1" x2="996.1" y1="30" y2="30" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_0_0_0_0_0" transform="matrix(1 0 0 1 996.1 30)">
+    <rect height="19.6" width="86.2" x="0" y="-9.8">
+      <title>Code of the agency organization.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>AgencyCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>[0-9A-Z]{2,20}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">AgencyCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0_1c" x1="839.1999999999999" x2="861.1999999999999" y1="60" y2="60" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_0_0_0_0_1" transform="matrix(1 0 0 1 861.2 60)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>Identifier of an agent as assigned by his/her agency.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">AgentID</text>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0_2c" x1="839.1999999999999" x2="861.1999999999999" y1="90" y2="90" class="hd hd1 hd2 hd3"/>
+  <text font-family="monospace" font-size="12" id="_0_0_0_0_0_0_0_0_2f" transform="matrix(1 0 0 1 861.2 90)" x="-10.0" y="-1.7" class="hd hd1 hd2 hd3">5</text>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_0_0_0_0_2" transform="matrix(1 0 0 1 861.2 90)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>A personal name given to the individual at birth and used before a family name. Also called first name. E.g. JOHN.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>5</ns0:maxOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">GivenName</text>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0_3c" x1="839.1999999999999" x2="861.1999999999999" y1="120" y2="120" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_0_0_0_0_3" transform="matrix(1 0 0 1 861.2 120)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>Individual's hereditary name(s) common to all members of a family. Also known as family name or last name. E.g. SMITH. Excludes any potential suffix.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Surname</text>
+  </g>
+  <line id="_0_0_0_0_0_0_0_0_0d" x1="839.1999999999999" x2="839.1999999999999" y1="30" y2="120" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_0_0_1c" x1="690.1999999999999" x2="712.1999999999999" y1="60" y2="60" class="hd hd1 hd2"/>
+  <g class="el ma hd hd1 hd2" id="_0_0_0_0_0_0_1" transform="matrix(1 0 0 1 712.2 60)">
+    <rect height="19.6" width="101.9" x="0" y="-9.8">
+      <title>A thing that happens in context of baggage logistics. That is a completion and / or commencement of a change, or the outcome of a change, or the arrival of a pre-determined point in time. Specifically, not a thing that takes place.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageEventType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageEvent</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0a" x1="814.0999999999999" x2="836.0999999999999" y1="60" y2="60" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_0_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 836.1 60)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_0b" x1="872.0999999999999" x2="894.0999999999999" y1="60" y2="60" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_0_0_1_0_0c" x1="894.0999999999999" x2="916.0999999999999" y1="60" y2="60" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_0_0_1_0_0" transform="matrix(1 0 0 1 916.1 60)">
+    <rect height="19.6" stroke-dasharray="5 5" width="117.6" x="0" y="-9.8">
+      <title>Actual date and time of the activity.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ActualDateTime</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_1c" x1="894.0999999999998" x2="916.0999999999998" y1="90" y2="90" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_0_0_1_0_1" transform="matrix(1 0 0 1 916.1 90)">
+    <rect height="19.6" stroke-dasharray="5 5" width="133.3" x="0" y="-9.8">
+      <title>Event Trigger Qualifier as per RP1745 section 2 .R Augmented Internal Airline Data</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>EventTriggerCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:pa>
+              <ns0:va>[0-9]</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">EventTriggerCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2c" x1="894.0999999999999" x2="916.0999999999999" y1="120" y2="120" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_0_0_1_0_2" transform="matrix(1 0 0 1 916.1 120)">
+    <rect height="19.6" width="70.6" x="0" y="-9.8">
+      <title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>FacilityType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Facility</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0a" x1="986.6999999999999" x2="1008.6999999999999" y1="120" y2="120" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_0_0_1_0_2_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1008.7 120)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_0b" x1="1044.6999999999998" x2="1066.6999999999998" y1="120" y2="120" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_0_0_1_0_2_0_0c" x1="1066.6999999999998" x2="1088.6999999999998" y1="120" y2="120" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_1_0_2_0_0" transform="matrix(1 0 0 1 1088.7 120)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>A classification of Facility according to Facility Type
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageFacilityTypeType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageFacilityType</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_0_0a" x1="1245.4999999999998" x2="1267.4999999999998" y1="120" y2="120" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="se hd hd1 hd2 hd3 hd4 co" id="_0_0_0_0_0_0_1_0_2_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1267.5 120)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_0_0_0b" x1="1303.4999999999998" x2="1325.4999999999998" y1="120" y2="120" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_0_0_0" transform="matrix(1 0 0 1 1325.5 120)">
+    <rect height="19.6" width="188.2" x="0" y="-9.8">
+      <title>Codification of type</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageFacilityTypeCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>[A-Z]{2,4}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageFacilityTypeCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_1c" x1="1066.6999999999998" x2="1088.6999999999998" y1="150" y2="150" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_1_0_2_0_1" transform="matrix(1 0 0 1 1088.7 150)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Identifies facility according to local conventions</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">FacilityID</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_2c" x1="1066.6999999999998" x2="1088.6999999999998" y1="180" y2="180" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_1_0_2_0_2" transform="matrix(1 0 0 1 1088.7 180)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>GeospatialLocationType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">GeospatialLocation</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_2_0a" x1="1237.6999999999998" x2="1259.6999999999998" y1="180" y2="180" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="se hd hd1 hd2 hd3 hd4 co" id="_0_0_0_0_0_0_1_0_2_0_2_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1259.7 180)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_2_0_0b" x1="1295.6999999999998" x2="1317.6999999999998" y1="180" y2="180" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <line id="_0_0_0_0_0_0_1_0_2_0_2_0_0c" x1="1317.6999999999998" x2="1339.6999999999998" y1="180" y2="180" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_2_0_0" transform="matrix(1 0 0 1 1339.7 180)">
+    <rect height="19.6" stroke-dasharray="5 5" width="164.6" x="0" y="-9.8">
+      <title>The number of the spatial location point elevation.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointElevationNumber</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_2_0_1c" x1="1317.6999999999998" x2="1339.6999999999998" y1="210" y2="210" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_2_0_1" transform="matrix(1 0 0 1 1339.7 210)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>The number of the spatial location point latitude.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointLatitudeNumber</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_2_0_2c" x1="1317.6999999999998" x2="1339.6999999999998" y1="240" y2="240" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_2_0_2" transform="matrix(1 0 0 1 1339.7 240)">
+    <rect height="19.6" stroke-dasharray="5 5" width="164.6" x="0" y="-9.8">
+      <title>The number of the spatial location point longitude.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointLongitudeNumber</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_2_0_0d" x1="1317.6999999999998" x2="1317.6999999999998" y1="180" y2="240" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <line id="_0_0_0_0_0_0_1_0_2_0_3c" x1="1066.6999999999998" x2="1088.6999999999998" y1="210" y2="210" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_1_0_2_0_3" transform="matrix(1 0 0 1 1088.7 210)">
+    <rect height="19.6" stroke-dasharray="5 5" width="39.2" x="0" y="-9.8">
+      <title>Names
+ e.g. A12</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Name</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4c" x1="1066.6999999999998" x2="1088.6999999999998" y1="240" y2="240" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_1_0_2_0_4" transform="matrix(1 0 0 1 1088.7 240)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>PostalAddressType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PostalAddress</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0a" x1="1198.4999999999998" x2="1220.4999999999998" y1="240" y2="240" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="se hd hd1 hd2 hd3 hd4 co" id="_0_0_0_0_0_0_1_0_2_0_4_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1220.5 240)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_0b" x1="1256.4999999999998" x2="1278.4999999999998" y1="240" y2="240" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_0c" x1="1278.4999999999998" x2="1300.4999999999998" y1="240" y2="240" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_4_0_0" transform="matrix(1 0 0 1 1300.5 240)">
+    <rect height="19.6" stroke-dasharray="5 5" width="133.3" x="0" y="-9.8">
+      <title>Additional address information including building name, room, apartment, or suite number.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BuildingRoomText</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_1c" x1="1278.4999999999998" x2="1300.4999999999998" y1="270" y2="270" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_4_0_1" transform="matrix(1 0 0 1 1300.5 270)">
+    <rect height="19.6" stroke-dasharray="5 5" width="39.2" x="0" y="-9.8">
+      <title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CityType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">City</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_1_0a" x1="1339.6999999999998" x2="1361.6999999999998" y1="270" y2="270" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="se hd hd1 hd2 hd3 hd4 hd5 co" id="_0_0_0_0_0_0_1_0_2_0_4_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1361.7 270)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_1_0_0b" x1="1397.6999999999998" x2="1419.6999999999998" y1="270" y2="270" class="hd hd1 hd2 hd3 hd4 hd5 hd6"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4 hd5 hd6" id="_0_0_0_0_0_0_1_0_2_0_4_0_1_0_0" transform="matrix(1 0 0 1 1419.7 270)">
+    <rect height="19.6" width="70.6" x="0" y="-9.8">
+      <title>The name, expressed as text, of the city, town or village.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CityName</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_2c" x1="1278.4999999999998" x2="1300.4999999999998" y1="300" y2="300" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_4_0_2" transform="matrix(1 0 0 1 1300.5 300)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">LabelText</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_3c" x1="1278.4999999999998" x2="1300.4999999999998" y1="330" y2="330" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_4_0_3" transform="matrix(1 0 0 1 1300.5 330)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Post office box. For example: P.O. Box 21.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PO_BoxCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_4c" x1="1278.4999999999998" x2="1300.4999999999998" y1="360" y2="360" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_4_0_4" transform="matrix(1 0 0 1 1300.5 360)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Postal code. For example: 11001, 11001-2345.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PostalCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_5c" x1="1278.4999999999998" x2="1300.4999999999998" y1="390" y2="390" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <text font-family="monospace" font-size="12" id="_0_0_0_0_0_0_1_0_2_0_4_0_5f" transform="matrix(1 0 0 1 1300.5 390)" x="-10.0" y="-1.7" class="hd hd1 hd2 hd3 hd4 hd5">2</text>
+  <g class="el op hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_4_0_5" transform="matrix(1 0 0 1 1300.5 390)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Street name and number. For example: Main Street, 100 Main Street.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>2</ns0:maxOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">StreetText</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_4_0_0d" x1="1278.4999999999998" x2="1278.4999999999998" y1="240" y2="390" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <line id="_0_0_0_0_0_0_1_0_2_0_5c" x1="1066.6999999999998" x2="1088.6999999999998" y1="270" y2="270" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_1_0_2_0_5" transform="matrix(1 0 0 1 1088.7 270)">
+    <rect height="19.6" width="62.7" x="0" y="-9.8">
+      <title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>StationType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Station</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_5_0a" x1="1151.3999999999999" x2="1173.3999999999999" y1="270" y2="270" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="se hd hd1 hd2 hd3 hd4 co" id="_0_0_0_0_0_0_1_0_2_0_5_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1173.4 270)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_5_0_0b" x1="1209.3999999999999" x2="1231.3999999999999" y1="270" y2="270" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_0_0_1_0_2_0_5_0_0" transform="matrix(1 0 0 1 1231.4 270)">
+    <rect height="19.6" width="141.1" x="0" y="-9.8">
+      <title>IATA defined code identifying a city or station.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IATA_LocationCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:length>3</ns0:length>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">IATA_LocationCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_2_0_0d" x1="1066.6999999999998" x2="1066.6999999999998" y1="120" y2="270" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_0_0_1_0_3c" x1="894.0999999999998" x2="916.0999999999998" y1="150" y2="150" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_0_0_1_0_3" transform="matrix(1 0 0 1 916.1 150)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>A device that scans objects and converts them into or extracts digital data. E.g. document scanner, barcode reader, biometric scanner.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ScannerType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Scanner</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_3_0a" x1="978.7999999999998" x2="1000.7999999999998" y1="150" y2="150" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_0_0_1_0_3_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1000.8 150)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_3_0_0b" x1="1036.7999999999997" x2="1058.7999999999997" y1="150" y2="150" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4" id="_0_0_0_0_0_0_1_0_3_0_0" transform="matrix(1 0 0 1 1058.8 150)">
+    <rect height="19.6" width="78.4" x="0" y="-9.8">
+      <title>Identifier of the technology device.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ScannerID</text>
+  </g>
+  <line id="_0_0_0_0_0_0_1_0_0d" x1="894.0999999999997" x2="894.0999999999997" y1="60" y2="150" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_0_0_2c" x1="690.1999999999997" x2="712.1999999999997" y1="90" y2="90" class="hd hd1 hd2"/>
+  <g class="el ma hd hd1 hd2" id="_0_0_0_0_0_0_2" transform="matrix(1 0 0 1 712.2 90)">
+    <rect height="19.6" width="149.0" x="0" y="-9.8">
+      <title>Top level baggage process name. 
+ Distinguishes between Local departing baggage (L), Transfer arriving baggage (F), Transfer departing baggage (T), and Terminating arriving baggage (X)</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageProcessCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:en>
+              <ns0:e>
+                <ns0:va>F</ns0:va>
+                <ns0:an>Arrivals (transfering) Process</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>L</ns0:va>
+                <ns0:an>Departing Process</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>T</ns0:va>
+                <ns0:an>Transfering Process (Departure)</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>X</ns0:va>
+                <ns0:an>Arrivals (Terminating) Process</ns0:an>
+              </ns0:e>
+            </ns0:en>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageProcessCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_3c" x1="690.1999999999997" x2="712.1999999999997" y1="120" y2="120" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_0_0_3" transform="matrix(1 0 0 1 712.2 120)">
+    <rect height="19.6" stroke-dasharray="5 5" width="172.5" x="0" y="-9.8">
+      <title>Secondary level baggage process naming
+ Follows baggage journey (bag, cart, ULD)
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageSubProcessCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:en>
+              <ns0:e>
+                <ns0:va>Acquire</ns0:va>
+                <ns0:an>Acquire from bagdrop or transfer</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>Deliver</ns0:va>
+                <ns0:an>Deliver step to passenger, or to transfer airline</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>Inspect</ns0:va>
+                <ns0:an>Inspection by customs step</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>Load</ns0:va>
+                <ns0:an>Loading step</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>Package</ns0:va>
+                <ns0:an>Packaging Step</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>Screen</ns0:va>
+                <ns0:an>Screening step</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>Unload</ns0:va>
+                <ns0:an>Unloading step</ns0:an>
+              </ns0:e>
+            </ns0:en>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageSubProcessCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_4c" x1="690.1999999999997" x2="712.1999999999997" y1="150" y2="150" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_0_0_4" transform="matrix(1 0 0 1 712.2 150)">
+    <rect height="19.6" stroke-dasharray="5 5" width="196.0" x="0" y="-9.8">
+      <title>Tertiary level of baggage process identification
+ Reports the task level</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageSubSubProcessCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageSubSubProcessCode</text>
+  </g>
+  <line id="_0_0_0_0_0_0_5c" x1="690.1999999999997" x2="712.1999999999997" y1="180" y2="180" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_0_0_5" transform="matrix(1 0 0 1 712.2 180)">
+    <rect height="19.6" stroke-dasharray="5 5" width="70.6" x="0" y="-9.8">
+      <title>Description of the process</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">DescText</text>
+  </g>
+  <line id="_0_0_0_0_0_0_0d" x1="690.1999999999997" x2="690.1999999999997" y1="30" y2="180" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_1c" x1="470.5999999999997" x2="492.5999999999997" y1="60" y2="60" class="hd hd1"/>
+  <g class="el op hd hd1" id="_0_0_0_0_1" transform="matrix(1 0 0 1 492.6 60)">
+    <rect height="19.6" stroke-dasharray="5 5" width="101.9" x="0" y="-9.8">
+      <title>A set of statuses of baggage at a particular time in a process.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageStatusesType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageState</text>
+  </g>
+  <line id="_0_0_0_0_1_0a" x1="594.4999999999997" x2="616.4999999999997" y1="60" y2="60" class="hd hd1"/>
+  <g class="se hd hd1 co" id="_0_0_0_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 616.5 60)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_1_0_0b" x1="652.4999999999997" x2="674.4999999999997" y1="60" y2="60" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_1_0_0c" x1="674.4999999999997" x2="696.4999999999997" y1="60" y2="60" class="hd hd1 hd2"/>
+  <text font-family="monospace" font-size="12" id="_0_0_0_0_1_0_0f" transform="matrix(1 0 0 1 696.5 60)" x="-16.8" y="-1.7" class="hd hd1 hd2">10</text>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_1_0_0" transform="matrix(1 0 0 1 696.5 60)">
+    <rect height="19.6" stroke-dasharray="5 5" width="164.6" x="0" y="-9.8">
+      <title>Expresses conformance enforcements over the baggage item
+ 
+ closed, sealed, screened, inspected, verified, reconciled</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ConformanceStateCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>10</ns0:maxOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ConformanceStateCode</text>
+  </g>
+  <line id="_0_0_0_0_1_0_1c" x1="674.4999999999997" x2="696.4999999999997" y1="90" y2="90" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_1_0_1" transform="matrix(1 0 0 1 696.5 90)">
+    <rect height="19.6" stroke-dasharray="5 5" width="133.3" x="0" y="-9.8">
+      <title>Expresses control over the baggage item
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ControlStateCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ControlStateCode</text>
+  </g>
+  <line id="_0_0_0_0_1_0_2c" x1="674.4999999999998" x2="696.4999999999998" y1="120" y2="120" class="hd hd1 hd2"/>
+  <text font-family="monospace" font-size="12" id="_0_0_0_0_1_0_2f" transform="matrix(1 0 0 1 696.5 120)" x="-16.8" y="-1.7" class="hd hd1 hd2">10</text>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_1_0_2" transform="matrix(1 0 0 1 696.5 120)">
+    <rect height="19.6" stroke-dasharray="5 5" width="141.1" x="0" y="-9.8">
+      <title>Tracks various incidents 
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IncidentStateCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>10</ns0:maxOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">IncidentStateCode</text>
+  </g>
+  <line id="_0_0_0_0_1_0_0d" x1="674.4999999999998" x2="674.4999999999998" y1="60" y2="120" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_2c" x1="470.5999999999998" x2="492.5999999999998" y1="90" y2="90" class="hd hd1"/>
+  <g class="el ma hd hd1" id="_0_0_0_0_2" transform="matrix(1 0 0 1 492.6 90)">
+    <rect height="19.6" width="39.2" x="0" y="-9.8">
+      <title>A cart may be used to transport baggage or cargo over the airport
+ has wheels, offers a platform, has towing interface
+ see AHM 963: FUNCTIONAL SPECIFICATION FOR A BAGGAGE/CARGO CART</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CartType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Cart</text>
+  </g>
+  <line id="_0_0_0_0_2_0a" x1="531.7999999999998" x2="553.7999999999998" y1="90" y2="90" class="hd hd1"/>
+  <g class="se hd hd1 co" id="_0_0_0_0_2_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 553.8 90)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_2_0_0b" x1="589.7999999999998" x2="611.7999999999998" y1="90" y2="90" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_2_0_0c" x1="611.7999999999998" x2="633.7999999999998" y1="90" y2="90" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_2_0_0" transform="matrix(1 0 0 1 633.8 90)">
+    <rect height="19.6" stroke-dasharray="5 5" width="54.9" x="0" y="-9.8">
+      <title>May identify individual cars</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CartID</text>
+  </g>
+  <line id="_0_0_0_0_2_0_1c" x1="611.7999999999998" x2="633.7999999999998" y1="120" y2="120" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_2_0_1" transform="matrix(1 0 0 1 633.8 120)">
+    <rect height="19.6" stroke-dasharray="5 5" width="70.6" x="0" y="-9.8">
+      <title>A qualification of a Cart as BAGGAGE or CARGO CART
+ see AHM 963: FUNCTIONAL SPECIFICATION FOR A BAGGAGE/CARGO CART</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CartTypeType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CartType</text>
+  </g>
+  <line id="_0_0_0_0_2_0_1_0a" x1="704.3999999999999" x2="726.3999999999999" y1="120" y2="120" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_2_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 726.4 120)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_2_0_1_0_0b" x1="762.3999999999999" x2="784.3999999999999" y1="120" y2="120" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_2_0_1_0_0" transform="matrix(1 0 0 1 784.4 120)">
+    <rect height="19.6" width="101.9" x="0" y="-9.8">
+      <title>A qualification of a Cart as BAGGAGE or CARGO CART
+ see AHM 963: FUNCTIONAL SPECIFICATION FOR A BAGGAGE/CARGO CART</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CartTypeCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:en>
+              <ns0:e>
+                <ns0:va>Baggage</ns0:va>
+                <ns0:an>Cart used to transport baggage</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>Cargo</ns0:va>
+                <ns0:an>Cart to use for moving cargo</ns0:an>
+              </ns0:e>
+            </ns0:en>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CartTypeCode</text>
+  </g>
+  <line id="_0_0_0_0_2_0_0d" x1="611.7999999999998" x2="611.7999999999998" y1="90" y2="120" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_3c" x1="470.59999999999985" x2="492.59999999999985" y1="120" y2="120" class="hd hd1"/>
+  <g class="el op hd hd1" id="_0_0_0_0_3" transform="matrix(1 0 0 1 492.6 120)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>Code of change indicator. (NEW,CHG,DEL).</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ChangeIndCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxLength>3</ns0:maxLength>
+            <ns0:en>
+              <ns0:e>
+                <ns0:va>CHG</ns0:va>
+                <ns0:an>This is a change to bag movement (e.g. equivalent to BSMCHG)</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>DEL</ns0:va>
+                <ns0:an>This is a delete of a bag movement (e.g. equivalent to BSMDEL)</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>NEW</ns0:va>
+                <ns0:an>This is a newly created bag movement (equivalent to .V (NEW) BSM</ns0:an>
+              </ns0:e>
+            </ns0:en>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ChangeIndCode</text>
+  </g>
+  <line id="_0_0_0_0_3_0b" x1="602.3999999999999" x2="624.3999999999999" y1="120" y2="120" class="hd hd1"/>
+  <line id="_0_0_0_0_3_0a" x1="624.3999999999999" x2="646.3999999999999" y1="120" y2="120" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_0" transform="matrix(1 0 0 1 646.4 120)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>The identifier of the language used in the corresponding text string.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@LangID</text>
+  </g>
+  <line id="_0_0_0_0_3_1a" x1="624.3999999999999" x2="646.3999999999999" y1="150" y2="150" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_1" transform="matrix(1 0 0 1 646.4 150)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>An agency that maintains one or more code lists.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListAgencyID</text>
+  </g>
+  <line id="_0_0_0_0_3_2a" x1="624.3999999999999" x2="646.3999999999999" y1="180" y2="180" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_2" transform="matrix(1 0 0 1 646.4 180)">
+    <rect height="19.6" stroke-dasharray="5 5" width="125.4" x="0" y="-9.8">
+      <title>The name of the agency that maintains the code list.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListAgencyName</text>
+  </g>
+  <line id="_0_0_0_0_3_3a" x1="624.3999999999999" x2="646.3999999999999" y1="210" y2="210" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_3" transform="matrix(1 0 0 1 646.4 210)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>The identification of a list of codes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListID</text>
+  </g>
+  <line id="_0_0_0_0_3_4a" x1="624.3999999999999" x2="646.3999999999999" y1="240" y2="240" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_4" transform="matrix(1 0 0 1 646.4 240)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>The name of a list of codes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListName</text>
+  </g>
+  <line id="_0_0_0_0_3_5a" x1="624.3999999999999" x2="646.3999999999999" y1="270" y2="270" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_5" transform="matrix(1 0 0 1 646.4 270)">
+    <rect height="19.6" stroke-dasharray="5 5" width="227.4" x="0" y="-9.8">
+      <title>The Uniform Resource identifier that identifies where the code list scheme is located.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListSchemeUniformResourceID</text>
+  </g>
+  <line id="_0_0_0_0_3_6a" x1="624.3999999999999" x2="646.3999999999999" y1="300" y2="300" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_6" transform="matrix(1 0 0 1 646.4 300)">
+    <rect height="19.6" stroke-dasharray="5 5" width="180.3" x="0" y="-9.8">
+      <title>The Uniform Resource Identifier that identifies where the code list is located.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListUniformResourceID</text>
+  </g>
+  <line id="_0_0_0_0_3_7a" x1="624.3999999999999" x2="646.3999999999999" y1="330" y2="330" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_7" transform="matrix(1 0 0 1 646.4 330)">
+    <rect height="19.6" stroke-dasharray="5 5" width="117.6" x="0" y="-9.8">
+      <title>The version of the code list.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListVersionID</text>
+  </g>
+  <line id="_0_0_0_0_3_8a" x1="624.3999999999999" x2="646.3999999999999" y1="360" y2="360" class="hd hd1"/>
+  <g class="at op hd hd1" id="_0_0_0_0_3_8" transform="matrix(1 0 0 1 646.4 360)">
+    <rect height="19.6" stroke-dasharray="5 5" width="47.0" x="0" y="-9.8">
+      <title>The textual equivalent of the code content.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@Name</text>
+  </g>
+  <line id="_0_0_0_0_3_0d" x1="624.3999999999999" x2="624.3999999999999" y1="120" y2="360" class="hd hd1"/>
+  <line id="_0_0_0_0_4c" x1="470.59999999999985" x2="492.59999999999985" y1="390" y2="390" class="hd hd1"/>
+  <g class="el op hd hd1" id="_0_0_0_0_4" transform="matrix(1 0 0 1 492.6 390)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>Code used to identify a particular RBD. For example: P, J, W, M.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>RBD_CodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ClassOfServiceCode</text>
+  </g>
+  <line id="_0_0_0_0_5c" x1="470.5999999999999" x2="492.5999999999999" y1="420" y2="420" class="hd hd1"/>
+  <g class="el op hd hd1" id="_0_0_0_0_5" transform="matrix(1 0 0 1 492.6 420)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>A collection reports when an item is (planned to be) collected at a facility potentially using a vehicle 
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CollectionType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Collection</text>
+  </g>
+  <line id="_0_0_0_0_5_0a" x1="578.8" x2="600.8" y1="420" y2="420" class="hd hd1"/>
+  <g class="se hd hd1 co" id="_0_0_0_0_5_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 600.8 420)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_0b" x1="636.8" x2="658.8" y1="420" y2="420" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_5_0_0c" x1="658.8" x2="680.8" y1="420" y2="420" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_5_0_0" transform="matrix(1 0 0 1 680.8 420)">
+    <rect height="19.6" stroke-dasharray="5 5" width="133.3" x="0" y="-9.8">
+      <title>Earliest or targetted time for collection</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">EarliestDateTime</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1c" x1="658.8" x2="680.8" y1="450" y2="450" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_5_0_1" transform="matrix(1 0 0 1 680.8 450)">
+    <rect height="19.6" stroke-dasharray="5 5" width="70.6" x="0" y="-9.8">
+      <title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>FacilityType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Facility</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0a" x1="751.4" x2="773.4" y1="450" y2="450" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_5_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 773.4 450)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_0b" x1="809.4" x2="831.4" y1="450" y2="450" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_5_0_1_0_0c" x1="831.4" x2="853.4" y1="450" y2="450" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_5_0_1_0_0" transform="matrix(1 0 0 1 853.4 450)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>A classification of Facility according to Facility Type
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageFacilityTypeType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageFacilityType</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_0_0a" x1="1010.2" x2="1032.2" y1="450" y2="450" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_5_0_1_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1032.2 450)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_0_0_0b" x1="1068.2" x2="1090.2" y1="450" y2="450" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_0_0_0" transform="matrix(1 0 0 1 1090.2 450)">
+    <rect height="19.6" width="188.2" x="0" y="-9.8">
+      <title>Codification of type</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageFacilityTypeCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>[A-Z]{2,4}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageFacilityTypeCode</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_1c" x1="831.4000000000001" x2="853.4000000000001" y1="480" y2="480" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_5_0_1_0_1" transform="matrix(1 0 0 1 853.4 480)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Identifies facility according to local conventions</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">FacilityID</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_2c" x1="831.4000000000001" x2="853.4000000000001" y1="510" y2="510" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_5_0_1_0_2" transform="matrix(1 0 0 1 853.4 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>GeospatialLocationType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">GeospatialLocation</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_2_0a" x1="1002.4000000000001" x2="1024.4" y1="510" y2="510" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_5_0_1_0_2_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1024.4 510)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_2_0_0b" x1="1060.4" x2="1082.4" y1="510" y2="510" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_5_0_1_0_2_0_0c" x1="1082.4" x2="1104.4" y1="510" y2="510" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_2_0_0" transform="matrix(1 0 0 1 1104.4 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="164.6" x="0" y="-9.8">
+      <title>The number of the spatial location point elevation.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointElevationNumber</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_2_0_1c" x1="1082.4" x2="1104.4" y1="540" y2="540" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_2_0_1" transform="matrix(1 0 0 1 1104.4 540)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>The number of the spatial location point latitude.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointLatitudeNumber</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_2_0_2c" x1="1082.4" x2="1104.4" y1="570" y2="570" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_2_0_2" transform="matrix(1 0 0 1 1104.4 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="164.6" x="0" y="-9.8">
+      <title>The number of the spatial location point longitude.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointLongitudeNumber</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_2_0_0d" x1="1082.4" x2="1082.4" y1="510" y2="570" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_5_0_1_0_3c" x1="831.4000000000001" x2="853.4000000000001" y1="540" y2="540" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_5_0_1_0_3" transform="matrix(1 0 0 1 853.4 540)">
+    <rect height="19.6" stroke-dasharray="5 5" width="39.2" x="0" y="-9.8">
+      <title>Names
+ e.g. A12</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Name</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4c" x1="831.4000000000001" x2="853.4000000000001" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_5_0_1_0_4" transform="matrix(1 0 0 1 853.4 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>PostalAddressType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PostalAddress</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0a" x1="963.2" x2="985.2" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_5_0_1_0_4_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 985.2 570)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_0b" x1="1021.2" x2="1043.2" y1="570" y2="570" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_5_0_1_0_4_0_0c" x1="1043.2" x2="1065.2" y1="570" y2="570" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_4_0_0" transform="matrix(1 0 0 1 1065.2 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="133.3" x="0" y="-9.8">
+      <title>Additional address information including building name, room, apartment, or suite number.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BuildingRoomText</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_1c" x1="1043.2" x2="1065.2" y1="600" y2="600" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_4_0_1" transform="matrix(1 0 0 1 1065.2 600)">
+    <rect height="19.6" stroke-dasharray="5 5" width="39.2" x="0" y="-9.8">
+      <title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CityType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">City</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_1_0a" x1="1104.4" x2="1126.4" y1="600" y2="600" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="se hd hd1 hd2 hd3 hd4 co" id="_0_0_0_0_5_0_1_0_4_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1126.4 600)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_1_0_0b" x1="1162.4" x2="1184.4" y1="600" y2="600" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_5_0_1_0_4_0_1_0_0" transform="matrix(1 0 0 1 1184.4 600)">
+    <rect height="19.6" width="70.6" x="0" y="-9.8">
+      <title>The name, expressed as text, of the city, town or village.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CityName</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_2c" x1="1043.2" x2="1065.2" y1="630" y2="630" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_4_0_2" transform="matrix(1 0 0 1 1065.2 630)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">LabelText</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_3c" x1="1043.2" x2="1065.2" y1="660" y2="660" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_4_0_3" transform="matrix(1 0 0 1 1065.2 660)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Post office box. For example: P.O. Box 21.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PO_BoxCode</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_4c" x1="1043.2" x2="1065.2" y1="690" y2="690" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_4_0_4" transform="matrix(1 0 0 1 1065.2 690)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Postal code. For example: 11001, 11001-2345.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PostalCode</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_5c" x1="1043.2" x2="1065.2" y1="720" y2="720" class="hd hd1 hd2 hd3 hd4"/>
+  <text font-family="monospace" font-size="12" id="_0_0_0_0_5_0_1_0_4_0_5f" transform="matrix(1 0 0 1 1065.2 720)" x="-10.0" y="-1.7" class="hd hd1 hd2 hd3 hd4">2</text>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_4_0_5" transform="matrix(1 0 0 1 1065.2 720)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Street name and number. For example: Main Street, 100 Main Street.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>2</ns0:maxOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">StreetText</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_4_0_0d" x1="1043.2" x2="1043.2" y1="570" y2="720" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_5_0_1_0_5c" x1="831.4000000000001" x2="853.4000000000001" y1="600" y2="600" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_5_0_1_0_5" transform="matrix(1 0 0 1 853.4 600)">
+    <rect height="19.6" width="62.7" x="0" y="-9.8">
+      <title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>StationType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Station</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_5_0a" x1="916.1000000000001" x2="938.1000000000001" y1="600" y2="600" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_5_0_1_0_5_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 938.1 600)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_5_0_0b" x1="974.1000000000001" x2="996.1000000000001" y1="600" y2="600" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4" id="_0_0_0_0_5_0_1_0_5_0_0" transform="matrix(1 0 0 1 996.1 600)">
+    <rect height="19.6" width="141.1" x="0" y="-9.8">
+      <title>IATA defined code identifying a city or station.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IATA_LocationCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:length>3</ns0:length>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">IATA_LocationCode</text>
+  </g>
+  <line id="_0_0_0_0_5_0_1_0_0d" x1="831.4" x2="831.4" y1="450" y2="600" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_5_0_2c" x1="658.8" x2="680.8" y1="480" y2="480" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_5_0_2" transform="matrix(1 0 0 1 680.8 480)">
+    <rect height="19.6" stroke-dasharray="5 5" width="117.6" x="0" y="-9.8">
+      <title>Latest time for collection</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">LatestDateTime</text>
+  </g>
+  <line id="_0_0_0_0_5_0_3c" x1="658.8" x2="680.8" y1="510" y2="510" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_5_0_3" transform="matrix(1 0 0 1 680.8 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="188.2" x="0" y="-9.8">
+      <title>A means used for transporting people or goods, on land or water. E.g. train, bus, van, ship.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>SurfaceTransportVehicleType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">SurfaceTransportVehicle</text>
+  </g>
+  <line id="_0_0_0_0_5_0_3_0a" x1="869.0" x2="891.0" y1="510" y2="510" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_5_0_3_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 891 510)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_5_0_3_0_0b" x1="927.0" x2="949.0" y1="510" y2="510" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_5_0_3_0_0c" x1="949.0" x2="971.0" y1="510" y2="510" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_5_0_3_0_0" transform="matrix(1 0 0 1 971 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>The code of the carriage medium, i.e. type of transport vehicle.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CarriageMediumCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:en>
+              <ns0:e>
+                <ns0:va>AV</ns0:va>
+                <ns0:an>Airline VAN</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>CO</ns0:va>
+                <ns0:an>Courier Van</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>CR</ns0:va>
+                <ns0:an>Car Rental VAN</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>CS</ns0:va>
+                <ns0:an>Cruise Ship</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>HV</ns0:va>
+                <ns0:an>Hotel VAN</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>RA</ns0:va>
+                <ns0:an>Rail</ns0:an>
+              </ns0:e>
+            </ns0:en>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CarriageMediumCode</text>
+  </g>
+  <line id="_0_0_0_0_5_0_3_0_1c" x1="949.0" x2="971.0" y1="540" y2="540" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_5_0_3_0_1" transform="matrix(1 0 0 1 971 540)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>The identifier of the surface transport vehicle.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>SurfaceTransportID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>12</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">SurfaceTransportID</text>
+  </g>
+  <line id="_0_0_0_0_5_0_3_0_0d" x1="949.0" x2="949.0" y1="510" y2="540" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_5_0_0d" x1="658.8" x2="658.8" y1="420" y2="510" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_6c" x1="470.59999999999997" x2="492.59999999999997" y1="450" y2="450" class="hd hd1"/>
+  <g class="el op hd hd1" id="_0_0_0_0_6" transform="matrix(1 0 0 1 492.6 450)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>Code set used with ULDs for segregation of bags and/or cargo for efficient load and unload from the aircraft and subsequent ground operations. Load information codes, known also as commodity codes, are defined by but not limited to IATA Load Control - AHM 510, 1.1.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CommodityCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:pa>
+              <ns0:va>[A-Z0-9]{1,2}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CommodityCode</text>
+  </g>
+  <line id="_0_0_0_0_7c" x1="470.59999999999997" x2="492.59999999999997" y1="480" y2="480" class="hd hd1"/>
+  <g class="el op hd hd1" id="_0_0_0_0_7" transform="matrix(1 0 0 1 492.6 480)">
+    <rect height="19.6" stroke-dasharray="5 5" width="70.6" x="0" y="-9.8">
+      <title>A delivery reports when an item is (planned to be) delivered at a facility potentially using a vehicle</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DeliveryType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Delivery</text>
+  </g>
+  <line id="_0_0_0_0_7_0a" x1="563.1999999999999" x2="585.1999999999999" y1="480" y2="480" class="hd hd1"/>
+  <g class="se hd hd1 co" id="_0_0_0_0_7_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 585.2 480)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_0b" x1="621.1999999999999" x2="643.1999999999999" y1="480" y2="480" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_7_0_0c" x1="643.1999999999999" x2="665.1999999999999" y1="480" y2="480" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_7_0_0" transform="matrix(1 0 0 1 665.2 480)">
+    <rect height="19.6" stroke-dasharray="5 5" width="133.3" x="0" y="-9.8">
+      <title>Earliest or target time for delivery</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">EarliestDateTime</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1c" x1="643.2" x2="665.2" y1="510" y2="510" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_7_0_1" transform="matrix(1 0 0 1 665.2 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="70.6" x="0" y="-9.8">
+      <title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>FacilityType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Facility</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0a" x1="735.8000000000001" x2="757.8000000000001" y1="510" y2="510" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_7_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 757.8 510)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_0b" x1="793.8000000000001" x2="815.8000000000001" y1="510" y2="510" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_7_0_1_0_0c" x1="815.8000000000001" x2="837.8000000000001" y1="510" y2="510" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_7_0_1_0_0" transform="matrix(1 0 0 1 837.8 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>A classification of Facility according to Facility Type
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageFacilityTypeType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageFacilityType</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_0_0a" x1="994.6000000000001" x2="1016.6000000000001" y1="510" y2="510" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_7_0_1_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1016.6 510)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_0_0_0b" x1="1052.6000000000001" x2="1074.6000000000001" y1="510" y2="510" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_0_0_0" transform="matrix(1 0 0 1 1074.6 510)">
+    <rect height="19.6" width="188.2" x="0" y="-9.8">
+      <title>Codification of type</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>BaggageFacilityTypeCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>[A-Z]{2,4}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BaggageFacilityTypeCode</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_1c" x1="815.8000000000002" x2="837.8000000000002" y1="540" y2="540" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_7_0_1_0_1" transform="matrix(1 0 0 1 837.8 540)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Identifies facility according to local conventions</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">FacilityID</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_2c" x1="815.8000000000002" x2="837.8000000000002" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_7_0_1_0_2" transform="matrix(1 0 0 1 837.8 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>GeospatialLocationType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">GeospatialLocation</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_2_0a" x1="986.8000000000002" x2="1008.8000000000002" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_7_0_1_0_2_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1008.8 570)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_2_0_0b" x1="1044.8000000000002" x2="1066.8000000000002" y1="570" y2="570" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_7_0_1_0_2_0_0c" x1="1066.8000000000002" x2="1088.8000000000002" y1="570" y2="570" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_2_0_0" transform="matrix(1 0 0 1 1088.8 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="164.6" x="0" y="-9.8">
+      <title>The number of the spatial location point elevation.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointElevationNumber</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_2_0_1c" x1="1066.8000000000002" x2="1088.8000000000002" y1="600" y2="600" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_2_0_1" transform="matrix(1 0 0 1 1088.8 600)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>The number of the spatial location point latitude.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointLatitudeNumber</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_2_0_2c" x1="1066.8000000000002" x2="1088.8000000000002" y1="630" y2="630" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_2_0_2" transform="matrix(1 0 0 1 1088.8 630)">
+    <rect height="19.6" stroke-dasharray="5 5" width="164.6" x="0" y="-9.8">
+      <title>The number of the spatial location point longitude.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>NumberType</ns0:ty>
+          <ns0:ft>xs:decimal</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PointLongitudeNumber</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_2_0_0d" x1="1066.8000000000002" x2="1066.8000000000002" y1="570" y2="630" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_7_0_1_0_3c" x1="815.8000000000002" x2="837.8000000000002" y1="600" y2="600" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_7_0_1_0_3" transform="matrix(1 0 0 1 837.8 600)">
+    <rect height="19.6" stroke-dasharray="5 5" width="39.2" x="0" y="-9.8">
+      <title>Names
+ e.g. A12</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Name</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4c" x1="815.8000000000002" x2="837.8000000000002" y1="630" y2="630" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_7_0_1_0_4" transform="matrix(1 0 0 1 837.8 630)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>PostalAddressType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PostalAddress</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0a" x1="947.6000000000001" x2="969.6000000000001" y1="630" y2="630" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_7_0_1_0_4_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 969.6 630)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_0b" x1="1005.6000000000001" x2="1027.6000000000001" y1="630" y2="630" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_7_0_1_0_4_0_0c" x1="1027.6000000000001" x2="1049.6000000000001" y1="630" y2="630" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_4_0_0" transform="matrix(1 0 0 1 1049.6 630)">
+    <rect height="19.6" stroke-dasharray="5 5" width="133.3" x="0" y="-9.8">
+      <title>Additional address information including building name, room, apartment, or suite number.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">BuildingRoomText</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_1c" x1="1027.6000000000001" x2="1049.6000000000001" y1="660" y2="660" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_4_0_1" transform="matrix(1 0 0 1 1049.6 660)">
+    <rect height="19.6" stroke-dasharray="5 5" width="39.2" x="0" y="-9.8">
+      <title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CityType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">City</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_1_0a" x1="1088.8000000000002" x2="1110.8000000000002" y1="660" y2="660" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="se hd hd1 hd2 hd3 hd4 co" id="_0_0_0_0_7_0_1_0_4_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 1110.8 660)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_1_0_0b" x1="1146.8000000000002" x2="1168.8000000000002" y1="660" y2="660" class="hd hd1 hd2 hd3 hd4 hd5"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4 hd5" id="_0_0_0_0_7_0_1_0_4_0_1_0_0" transform="matrix(1 0 0 1 1168.8 660)">
+    <rect height="19.6" width="70.6" x="0" y="-9.8">
+      <title>The name, expressed as text, of the city, town or village.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>ProperNameType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>64</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CityName</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_2c" x1="1027.6000000000001" x2="1049.6000000000001" y1="690" y2="690" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_4_0_2" transform="matrix(1 0 0 1 1049.6 690)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">LabelText</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_3c" x1="1027.6000000000001" x2="1049.6000000000001" y1="720" y2="720" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_4_0_3" transform="matrix(1 0 0 1 1049.6 720)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Post office box. For example: P.O. Box 21.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PO_BoxCode</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_4c" x1="1027.6000000000001" x2="1049.6000000000001" y1="750" y2="750" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_4_0_4" transform="matrix(1 0 0 1 1049.6 750)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Postal code. For example: 11001, 11001-2345.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">PostalCode</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_5c" x1="1027.6000000000001" x2="1049.6000000000001" y1="780" y2="780" class="hd hd1 hd2 hd3 hd4"/>
+  <text font-family="monospace" font-size="12" id="_0_0_0_0_7_0_1_0_4_0_5f" transform="matrix(1 0 0 1 1049.6 780)" x="-10.0" y="-1.7" class="hd hd1 hd2 hd3 hd4">2</text>
+  <g class="el op hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_4_0_5" transform="matrix(1 0 0 1 1049.6 780)">
+    <rect height="19.6" stroke-dasharray="5 5" width="86.2" x="0" y="-9.8">
+      <title>Street name and number. For example: Main Street, 100 Main Street.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>2</ns0:maxOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">StreetText</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_4_0_0d" x1="1027.6000000000001" x2="1027.6000000000001" y1="630" y2="780" class="hd hd1 hd2 hd3 hd4"/>
+  <line id="_0_0_0_0_7_0_1_0_5c" x1="815.8000000000002" x2="837.8000000000002" y1="660" y2="660" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_7_0_1_0_5" transform="matrix(1 0 0 1 837.8 660)">
+    <rect height="19.6" width="62.7" x="0" y="-9.8">
+      <title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>StationType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Station</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_5_0a" x1="900.5000000000002" x2="922.5000000000002" y1="660" y2="660" class="hd hd1 hd2 hd3"/>
+  <g class="se hd hd1 hd2 hd3 co" id="_0_0_0_0_7_0_1_0_5_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 922.5 660)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_5_0_0b" x1="958.5000000000002" x2="980.5000000000002" y1="660" y2="660" class="hd hd1 hd2 hd3 hd4"/>
+  <g class="el ma hd hd1 hd2 hd3 hd4" id="_0_0_0_0_7_0_1_0_5_0_0" transform="matrix(1 0 0 1 980.5 660)">
+    <rect height="19.6" width="141.1" x="0" y="-9.8">
+      <title>IATA defined code identifying a city or station.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IATA_LocationCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:length>3</ns0:length>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">IATA_LocationCode</text>
+  </g>
+  <line id="_0_0_0_0_7_0_1_0_0d" x1="815.8000000000001" x2="815.8000000000001" y1="510" y2="660" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_7_0_2c" x1="643.2" x2="665.2" y1="540" y2="540" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_7_0_2" transform="matrix(1 0 0 1 665.2 540)">
+    <rect height="19.6" stroke-dasharray="5 5" width="117.6" x="0" y="-9.8">
+      <title>Latest time for delivery</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">LatestDateTime</text>
+  </g>
+  <line id="_0_0_0_0_7_0_3c" x1="643.2" x2="665.2" y1="570" y2="570" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_7_0_3" transform="matrix(1 0 0 1 665.2 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="188.2" x="0" y="-9.8">
+      <title>A means used for transporting people or goods, on land or water. E.g. train, bus, van, ship.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>SurfaceTransportVehicleType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">SurfaceTransportVehicle</text>
+  </g>
+  <line id="_0_0_0_0_7_0_3_0a" x1="853.4000000000001" x2="875.4000000000001" y1="570" y2="570" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_7_0_3_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 875.4 570)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_7_0_3_0_0b" x1="911.4000000000001" x2="933.4000000000001" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_7_0_3_0_0c" x1="933.4000000000001" x2="955.4000000000001" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_7_0_3_0_0" transform="matrix(1 0 0 1 955.4 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>The code of the carriage medium, i.e. type of transport vehicle.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>CarriageMediumCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:en>
+              <ns0:e>
+                <ns0:va>AV</ns0:va>
+                <ns0:an>Airline VAN</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>CO</ns0:va>
+                <ns0:an>Courier Van</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>CR</ns0:va>
+                <ns0:an>Car Rental VAN</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>CS</ns0:va>
+                <ns0:an>Cruise Ship</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>HV</ns0:va>
+                <ns0:an>Hotel VAN</ns0:an>
+              </ns0:e>
+              <ns0:e>
+                <ns0:va>RA</ns0:va>
+                <ns0:an>Rail</ns0:an>
+              </ns0:e>
+            </ns0:en>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CarriageMediumCode</text>
+  </g>
+  <line id="_0_0_0_0_7_0_3_0_1c" x1="933.4000000000001" x2="955.4000000000001" y1="600" y2="600" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_7_0_3_0_1" transform="matrix(1 0 0 1 955.4 600)">
+    <rect height="19.6" stroke-dasharray="5 5" width="149.0" x="0" y="-9.8">
+      <title>The identifier of the surface transport vehicle.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>SurfaceTransportID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>12</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">SurfaceTransportID</text>
+  </g>
+  <line id="_0_0_0_0_7_0_3_0_0d" x1="933.4000000000001" x2="933.4000000000001" y1="570" y2="600" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_7_0_0d" x1="643.2" x2="643.2" y1="480" y2="570" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_8c" x1="470.6" x2="492.6" y1="510" y2="510" class="hd hd1"/>
+  <g class="el op hd hd1" id="_0_0_0_0_8" transform="matrix(1 0 0 1 492.6 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="125.4" x="0" y="-9.8">
+      <title>A space designated within a hold that can be containerized/palletized or not.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>HoldCompartmentType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">HoldCompartment</text>
+  </g>
+  <line id="_0_0_0_0_8_0a" x1="618.0" x2="640.0" y1="510" y2="510" class="hd hd1"/>
+  <g class="se hd hd1 co" id="_0_0_0_0_8_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 640 510)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_8_0_0b" x1="676.0" x2="698.0" y1="510" y2="510" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_8_0_0c" x1="698.0" x2="720.0" y1="510" y2="510" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_8_0_0" transform="matrix(1 0 0 1 720 510)">
+    <rect height="19.6" stroke-dasharray="5 5" width="141.1" x="0" y="-9.8">
+      <title>Identifies a compartment within a hold (compartment no). As per AHM505, compartments are numbered from 1 to 6. A second figure can indicate a section in a compartment starting from the front to the back and from right to left.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>HoldCompartmentID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:pa>
+              <ns0:va>[0-6][0-9]</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">HoldCompartmentID</text>
+  </g>
+  <line id="_0_0_0_0_8_0_1c" x1="698.0" x2="720.0" y1="540" y2="540" class="hd hd1 hd2"/>
+  <g class="el op hd hd1 hd2" id="_0_0_0_0_8_0_1" transform="matrix(1 0 0 1 720 540)">
+    <rect height="19.6" stroke-dasharray="5 5" width="54.9" x="0" y="-9.8">
+      <title>Identifies a hold within a deck. Typical values include FWD (forward), AFT, BULK, MAIN (deck).
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>HoldID_Type</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>10</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">HoldID</text>
+  </g>
+  <line id="_0_0_0_0_8_0_0d" x1="698.0" x2="698.0" y1="510" y2="540" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_9c" x1="470.6" x2="492.6" y1="540" y2="540" class="hd hd1"/>
+  <text font-family="monospace" font-size="12" id="_0_0_0_0_9f" transform="matrix(1 0 0 1 492.6 540)" x="-16.8" y="-1.7" class="hd hd1">10</text>
+  <g class="el op hd hd1" id="_0_0_0_0_9" transform="matrix(1 0 0 1 492.6 540)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>Internal Airline Data</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>InternalAirlineDataTextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:maxOccurs>10</ns0:maxOccurs>
+            <ns0:pa>
+              <ns0:va>[ -~]{1,59}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">InternalAirlineData</text>
+  </g>
+  <line id="_0_0_0_0_10c" x1="470.6000000000001" x2="492.6000000000001" y1="570" y2="570" class="hd hd1"/>
+  <g class="el ma hd hd1" id="_0_0_0_0_10" transform="matrix(1 0 0 1 492.6 570)">
+    <rect height="19.6" width="62.7" x="0" y="-9.8">
+      <title>Cart Ride either supports an arrival or a departure</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>SupportType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Support</text>
+  </g>
+  <line id="_0_0_0_0_10_0a" x1="555.3000000000001" x2="577.3000000000001" y1="570" y2="570" class="hd hd1"/>
+  <g class="se hd hd1 co" id="_0_0_0_0_10_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 577.3 570)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="30" y1="0" y2="0"/>
+    <line x1="18" x2="30" y1="-5" y2="-5"/>
+    <line x1="18" x2="30" y1="5" y2="5"/>
+    <line x1="18" x2="18" y1="-5" y2="5"/>
+  </g>
+  <line id="_0_0_0_0_10_0_0b" x1="613.3000000000001" x2="635.3000000000001" y1="570" y2="570" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_10_0_0c" x1="635.3000000000001" x2="657.3000000000001" y1="570" y2="570" class="hd hd1 hd2"/>
+  <g class="el ma hd hd1 hd2" id="_0_0_0_0_10_0_0" transform="matrix(1 0 0 1 657.3 570)">
+    <rect height="19.6" width="133.3" x="0" y="-9.8">
+      <title>A collapsed view on an action or process of arriving of a transport vehicle in any place or location.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TransportArrivalCollapsedType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">TransportArrival</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0a" x1="790.6000000000001" x2="812.6000000000001" y1="570" y2="570" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_10_0_0_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 812.6 570)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_0b" x1="848.6000000000001" x2="870.6000000000001" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_0_0_0c" x1="870.6000000000001" x2="892.6000000000001" y1="570" y2="570" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_0" transform="matrix(1 0 0 1 892.6 570)">
+    <rect height="19.6" stroke-dasharray="5 5" width="258.7" x="0" y="-9.8">
+      <title>Scheduled date and time of arrival of the aircraft at the terminal or departure gate at an airport.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">AircraftScheduledArrivalDateTime</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_1c" x1="870.6000000000001" x2="892.6000000000001" y1="600" y2="600" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_1" transform="matrix(1 0 0 1 892.6 600)">
+    <rect height="19.6" stroke-dasharray="5 5" width="227.4" x="0" y="-9.8">
+      <title>Scheduled date and time of departure of the aircraft at the terminal or departure gate at an airport.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">AircraftScheduledDepDateTime</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_2c" x1="870.6000000000003" x2="892.6000000000003" y1="630" y2="630" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_2" transform="matrix(1 0 0 1 892.6 630)">
+    <rect height="19.6" width="196.0" x="0" y="-9.8">
+      <title>IATA defined code identifying a city or station.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IATA_LocationCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:length>3</ns0:length>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ArrivalIATA_LocationCode</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3c" x1="870.6000000000004" x2="892.6000000000004" y1="660" y2="660" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3" transform="matrix(1 0 0 1 892.6 660)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IATA_TerminalCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>4</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ArrivalTerminalCode</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_0b" x1="1049.4000000000003" x2="1071.4000000000003" y1="660" y2="660" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_0_0_3_0a" x1="1071.4000000000003" x2="1093.4000000000003" y1="660" y2="660" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_0" transform="matrix(1 0 0 1 1093.4 660)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>The identifier of the language used in the corresponding text string.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@LangID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_1a" x1="1071.4000000000003" x2="1093.4000000000003" y1="690" y2="690" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_1" transform="matrix(1 0 0 1 1093.4 690)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>An agency that maintains one or more code lists.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListAgencyID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_2a" x1="1071.4000000000003" x2="1093.4000000000003" y1="720" y2="720" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_2" transform="matrix(1 0 0 1 1093.4 720)">
+    <rect height="19.6" stroke-dasharray="5 5" width="125.4" x="0" y="-9.8">
+      <title>The name of the agency that maintains the code list.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListAgencyName</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_3a" x1="1071.4000000000003" x2="1093.4000000000003" y1="750" y2="750" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_3" transform="matrix(1 0 0 1 1093.4 750)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>The identification of a list of codes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_4a" x1="1071.4000000000003" x2="1093.4000000000003" y1="780" y2="780" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_4" transform="matrix(1 0 0 1 1093.4 780)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>The name of a list of codes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListName</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_5a" x1="1071.4000000000003" x2="1093.4000000000003" y1="810" y2="810" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_5" transform="matrix(1 0 0 1 1093.4 810)">
+    <rect height="19.6" stroke-dasharray="5 5" width="227.4" x="0" y="-9.8">
+      <title>The Uniform Resource Identifier that identifies where the code list scheme is located.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:anyURI</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListSchemeUniformResourceID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_6a" x1="1071.4000000000003" x2="1093.4000000000003" y1="840" y2="840" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_6" transform="matrix(1 0 0 1 1093.4 840)">
+    <rect height="19.6" stroke-dasharray="5 5" width="180.3" x="0" y="-9.8">
+      <title>The Uniform Resource Identifier that identifies where the code list is located.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:anyURI</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListUniformResourceID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_7a" x1="1071.4000000000003" x2="1093.4000000000003" y1="870" y2="870" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_7" transform="matrix(1 0 0 1 1093.4 870)">
+    <rect height="19.6" stroke-dasharray="5 5" width="117.6" x="0" y="-9.8">
+      <title>The version of the code list.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListVersionID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_8a" x1="1071.4000000000003" x2="1093.4000000000003" y1="900" y2="900" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_3_8" transform="matrix(1 0 0 1 1093.4 900)">
+    <rect height="19.6" stroke-dasharray="5 5" width="47.0" x="0" y="-9.8">
+      <title>The textual equivalent of the code content.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@Name</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_3_0d" x1="1071.4000000000003" x2="1071.4000000000003" y1="660" y2="900" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_0_0_4c" x1="870.6000000000004" x2="892.6000000000004" y1="930" y2="930" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_4" transform="matrix(1 0 0 1 892.6 930)">
+    <rect height="19.6" width="133.3" x="0" y="-9.8">
+      <title>ICAO-defined 3-character code or IATA-defined 2-character code assigned to the carrier. For example: BA is British Airways PLC, 2C is SNCF and is also CMA CGM Air Cargo.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>AirlineDesigCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>([A-Z]{3}|[A-Z]{2})|([0-9][A-Z])|([A-Z][0-9])</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CarrierDesigCode</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_5c" x1="870.6000000000004" x2="892.6000000000004" y1="960" y2="960" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_5" transform="matrix(1 0 0 1 892.6 960)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>(UTC) date of the scheduled aircraft departure from the station of origin.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateType</ns0:ty>
+          <ns0:ft>xs:date</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">FlightID_Date</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_6c" x1="870.6000000000004" x2="892.6000000000004" y1="990" y2="990" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_6" transform="matrix(1 0 0 1 892.6 990)">
+    <rect height="19.6" width="133.3" x="0" y="-9.8">
+      <title>Numerical designation of a flight.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>FlightNumberTextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>[0-9]{1,4}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">FlightNumberText</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_7c" x1="870.6000000000004" x2="892.6000000000004" y1="1020" y2="1020" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_0_0_7" transform="matrix(1 0 0 1 892.6 1020)">
+    <rect height="19.6" stroke-dasharray="5 5" width="172.5" x="0" y="-9.8">
+      <title>from SIX XSD: Alphabetical character following a flight number assigned for operational purposes. SSIM: A code assigned by the administrating carrier for operational purposes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>OperationalSuffixTextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:length>1</ns0:length>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">OperationalSuffixText</text>
+  </g>
+  <line id="_0_0_0_0_10_0_0_0_0d" x1="870.6000000000004" x2="870.6000000000004" y1="570" y2="1020" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_1c" x1="635.3000000000004" x2="657.3000000000004" y1="600" y2="600" class="hd hd1 hd2"/>
+  <g class="el ma hd hd1 hd2" id="_0_0_0_0_10_0_1" transform="matrix(1 0 0 1 657.3 600)">
+    <rect height="19.6" width="101.9" x="0" y="-9.8">
+      <title>A collapsed view on an action or process of leaving of a transport vehicle from any place or location.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>TransportDepartureCollapsedType</ns0:ty>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">TransportDep</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0a" x1="759.2000000000004" x2="781.2000000000004" y1="600" y2="600" class="hd hd1 hd2"/>
+  <g class="se hd hd1 hd2 co" id="_0_0_0_0_10_0_1_0" onclick="t(this)" oncontextmenu="td(this)" transform="matrix(1 0 0 1 781.2 600)">
+    <ellipse cx="18" cy="0" rx="18" ry="12"/>
+    <line x1="4" x2="32" y1="0" y2="0"/>
+    <circle cx="10" cy="0" r="2"/>
+    <circle cx="18" cy="0" r="2"/>
+    <circle cx="26" cy="0" r="2"/>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_0b" x1="817.2000000000004" x2="839.2000000000004" y1="600" y2="600" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_1_0_0c" x1="839.2000000000004" x2="861.2000000000004" y1="600" y2="600" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_0" transform="matrix(1 0 0 1 861.2 600)">
+    <rect height="19.6" stroke-dasharray="5 5" width="227.4" x="0" y="-9.8">
+      <title>Scheduled date and time of departure of the aircraft at the terminal or departure gate at an airport.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateTimeType</ns0:ty>
+          <ns0:ft>xs:dateTime</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">AircraftScheduledDepDateTime</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1c" x1="839.2000000000004" x2="861.2000000000004" y1="630" y2="630" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1" transform="matrix(1 0 0 1 861.2 630)">
+    <rect height="19.6" stroke-dasharray="5 5" width="156.8" x="0" y="-9.8">
+      <title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IATA_TerminalCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:minLength>1</ns0:minLength>
+            <ns0:maxLength>4</ns0:maxLength>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">ArrivalTerminalCode</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_0b" x1="1018.0000000000005" x2="1040.0000000000005" y1="630" y2="630" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_1_0_1_0a" x1="1040.0000000000005" x2="1062.0000000000005" y1="630" y2="630" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_0" transform="matrix(1 0 0 1 1062 630)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>The identifier of the language used in the corresponding text string.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@LangID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_1a" x1="1040.0000000000005" x2="1062.0000000000005" y1="660" y2="660" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_1" transform="matrix(1 0 0 1 1062 660)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>An agency that maintains one or more code lists.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListAgencyID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_2a" x1="1040.0000000000005" x2="1062.0000000000005" y1="690" y2="690" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_2" transform="matrix(1 0 0 1 1062 690)">
+    <rect height="19.6" stroke-dasharray="5 5" width="125.4" x="0" y="-9.8">
+      <title>The name of the agency that maintains the code list.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListAgencyName</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_3a" x1="1040.0000000000005" x2="1062.0000000000005" y1="720" y2="720" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_3" transform="matrix(1 0 0 1 1062 720)">
+    <rect height="19.6" stroke-dasharray="5 5" width="62.7" x="0" y="-9.8">
+      <title>The identification of a list of codes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_4a" x1="1040.0000000000005" x2="1062.0000000000005" y1="750" y2="750" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_4" transform="matrix(1 0 0 1 1062 750)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>The name of a list of codes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListName</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_5a" x1="1040.0000000000005" x2="1062.0000000000005" y1="780" y2="780" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_5" transform="matrix(1 0 0 1 1062 780)">
+    <rect height="19.6" stroke-dasharray="5 5" width="227.4" x="0" y="-9.8">
+      <title>The Uniform Resource Identifier that identifies where the code list scheme is located.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:anyURI</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListSchemeUniformResourceID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_6a" x1="1040.0000000000005" x2="1062.0000000000005" y1="810" y2="810" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_6" transform="matrix(1 0 0 1 1062 810)">
+    <rect height="19.6" stroke-dasharray="5 5" width="180.3" x="0" y="-9.8">
+      <title>The Uniform Resource Identifier that identifies where the code list is located.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:anyURI</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListUniformResourceID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_7a" x1="1040.0000000000005" x2="1062.0000000000005" y1="840" y2="840" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_7" transform="matrix(1 0 0 1 1062 840)">
+    <rect height="19.6" stroke-dasharray="5 5" width="117.6" x="0" y="-9.8">
+      <title>The version of the code list.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:token</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@ListVersionID</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_8a" x1="1040.0000000000005" x2="1062.0000000000005" y1="870" y2="870" class="hd hd1 hd2 hd3"/>
+  <g class="at op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_1_8" transform="matrix(1 0 0 1 1062 870)">
+    <rect height="19.6" stroke-dasharray="5 5" width="47.0" x="0" y="-9.8">
+      <title>The textual equivalent of the code content.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>xs:string</ns0:ty>
+          <ns0:fa>
+            <ns0:use>optional</ns0:use>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">@Name</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_1_0d" x1="1040.0000000000005" x2="1040.0000000000005" y1="630" y2="870" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_1_0_2c" x1="839.2000000000005" x2="861.2000000000005" y1="900" y2="900" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_2" transform="matrix(1 0 0 1 861.2 900)">
+    <rect height="19.6" width="133.3" x="0" y="-9.8">
+      <title>ICAO-defined 3-character code or IATA-defined 2-character code assigned to the carrier. For example: BA is British Airways PLC, 2C is SNCF and is also CMA CGM Air Cargo.
+ </title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>AirlineDesigCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>([A-Z]{3}|[A-Z]{2})|([0-9][A-Z])|([A-Z][0-9])</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">CarrierDesigCode</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_3c" x1="839.2000000000005" x2="861.2000000000005" y1="930" y2="930" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_3" transform="matrix(1 0 0 1 861.2 930)">
+    <rect height="19.6" width="164.6" x="0" y="-9.8">
+      <title>IATA defined code identifying a city or station.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>IATA_LocationCodeType</ns0:ty>
+          <ns0:ft>xs:token</ns0:ft>
+          <ns0:fa>
+            <ns0:length>3</ns0:length>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">DepIATA_LocationCode</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_4c" x1="839.2000000000004" x2="861.2000000000004" y1="960" y2="960" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_4" transform="matrix(1 0 0 1 861.2 960)">
+    <rect height="19.6" stroke-dasharray="5 5" width="109.8" x="0" y="-9.8">
+      <title>(UTC) date of the scheduled aircraft departure from the station of origin.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>DateType</ns0:ty>
+          <ns0:ft>xs:date</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">FlightID_Date</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_5c" x1="839.2000000000004" x2="861.2000000000004" y1="990" y2="990" class="hd hd1 hd2 hd3"/>
+  <g class="el ma hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_5" transform="matrix(1 0 0 1 861.2 990)">
+    <rect height="19.6" width="133.3" x="0" y="-9.8">
+      <title>Numerical designation of a flight.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>FlightNumberTextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:pa>
+              <ns0:va>[0-9]{1,4}</ns0:va>
+            </ns0:pa>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">FlightNumberText</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_6c" x1="839.2000000000005" x2="861.2000000000005" y1="1020" y2="1020" class="hd hd1 hd2 hd3"/>
+  <g class="el op hd hd1 hd2 hd3" id="_0_0_0_0_10_0_1_0_6" transform="matrix(1 0 0 1 861.2 1020)">
+    <rect height="19.6" stroke-dasharray="5 5" width="172.5" x="0" y="-9.8">
+      <title>from SIX XSD: Alphabetical character following a flight number assigned for operational purposes. SSIM: A code assigned by the administrating carrier for operational purposes.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>OperationalSuffixTextType</ns0:ty>
+          <ns0:ft>xs:string</ns0:ft>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+            <ns0:length>1</ns0:length>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">OperationalSuffixText</text>
+  </g>
+  <line id="_0_0_0_0_10_0_1_0_0d" x1="839.2000000000005" x2="839.2000000000005" y1="600" y2="1020" class="hd hd1 hd2 hd3"/>
+  <line id="_0_0_0_0_10_0_0d" x1="635.3000000000005" x2="635.3000000000005" y1="570" y2="600" class="hd hd1 hd2"/>
+  <line id="_0_0_0_0_0d" x1="470.60000000000053" x2="470.60000000000053" y1="30" y2="570" class="hd hd1"/>
+  <line id="_0_0_1c" x1="298.00000000000057" x2="320.00000000000057" y1="60" y2="60" class="hd"/>
+  <g class="el op hd" id="_0_0_1" transform="matrix(1 0 0 1 320 60)">
+    <rect height="19.6" stroke-dasharray="5 5" width="78.4" x="0" y="-9.8">
+      <title>Payload information for this notification message.</title>
+      <metadata>
+        <ns0:xd>
+          <ns0:ty>dsig:SignatureType</ns0:ty>
+          <ns0:fa>
+            <ns0:minOccurs>0</ns0:minOccurs>
+          </ns0:fa>
+        </ns0:xd>
+      </metadata>
+    </rect>
+    <text font-family="monospace" font-size="14" x="2.8" y="4.9">Signature</text>
+  </g>
+  <line id="_0_0_0d" x1="298.00000000000057" x2="298.00000000000057" y1="30" y2="60" class="hd"/>
+</svg>
