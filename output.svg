@@ -1,0 +1,2340 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="3000">
+<style>
+    .el { fill: #8ecae6; stroke: #333; }
+    .at { fill: #ffb703; stroke: #333; }
+    .eltext { fill: #023047; font-size: 16px; font-family: 'Source Code Pro', monospace; }
+    .attext { fill: #fb8500; font-size: 13px; font-family: 'Source Code Pro', monospace; }
+    .edge { stroke: #888; stroke-width: 2; }
+</style>
+
+<g id="el_50_50" transform="translate(50,50)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Instructions to handle bag from airline to handler
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IATA_Baggage_BagRQ</text>
+</g>
+<line x1="230" y1="64" x2="350" y2="64" class="edge" />
+<line x1="230" y1="64" x2="350" y2="134" class="edge" />
+<g id="el_650_50" transform="translate(650,50)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Active segment of bag journey including relevant details
+Type: BagSegmentType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BagSegment</text>
+</g>
+<line x1="830" y1="64" x2="950" y2="64" class="edge" />
+<line x1="830" y1="64" x2="950" y2="134" class="edge" />
+<line x1="830" y1="64" x2="950" y2="204" class="edge" />
+<line x1="830" y1="64" x2="950" y2="274" class="edge" />
+<line x1="830" y1="64" x2="950" y2="344" class="edge" />
+<line x1="830" y1="64" x2="950" y2="414" class="edge" />
+<line x1="830" y1="64" x2="950" y2="484" class="edge" />
+<line x1="830" y1="64" x2="950" y2="554" class="edge" />
+<line x1="830" y1="64" x2="950" y2="624" class="edge" />
+<line x1="830" y1="64" x2="950" y2="694" class="edge" />
+<line x1="830" y1="64" x2="950" y2="764" class="edge" />
+<line x1="830" y1="64" x2="950" y2="834" class="edge" />
+<line x1="830" y1="64" x2="950" y2="904" class="edge" />
+<line x1="830" y1="64" x2="950" y2="974" class="edge" />
+<line x1="830" y1="64" x2="950" y2="1044" class="edge" />
+<g id="el_1250_50" transform="translate(1250,50)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A piece of luggage associated with a passenger, packed for traveling, and necessary or appropriate in connection with a journey.
+Type: BagType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Bag</text>
+</g>
+<line x1="1430" y1="64" x2="1550" y2="64" class="edge" />
+<line x1="1430" y1="64" x2="1550" y2="134" class="edge" />
+<line x1="1430" y1="64" x2="1550" y2="204" class="edge" />
+<line x1="1430" y1="64" x2="1550" y2="274" class="edge" />
+<g id="el_1850_50" transform="translate(1850,50)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A small piece of paper, fabric, plastic or similar material attached to an bag and giving information about it.
+Type: BagTagType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BagTag</text>
+</g>
+<line x1="2030" y1="64" x2="2150" y2="64" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="134" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="204" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="274" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="344" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="414" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="484" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="554" class="edge" />
+<line x1="2030" y1="64" x2="2150" y2="624" class="edge" />
+<g id="el_2450_50" transform="translate(2450,50)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Baggage identifier used for internal usage only (typically used as Julian date on 3 numeric)
+Type: AirlineBagRefID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AirlineBagRefID</text>
+</g>
+<g id="el_2450_104" transform="translate(2450,104)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Baggage tag issuer codes, combined with the tag serial number, are used to identify each piece of checked luggage through all baggage handling processes.
+ Refer to Resolution 769 Bag Tag Issuer Codes
+Type: BagTagIssuerCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IssuerCode</text>
+</g>
+<g id="el_2450_158" transform="translate(2450,158)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An organization which acts on behalf of another.
+Type: AgencyType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IssuingAgency</text>
+</g>
+<line x1="2630" y1="172" x2="2750" y2="172" class="edge" />
+<g id="el_3050_158" transform="translate(3050,158)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Code of the agency organization.
+Type: AgencyCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AgencyCode</text>
+</g>
+<g id="el_2450_212" transform="translate(2450,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A Role of an individual person to be a staff of an agency.
+Type: AgentCollapsedType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IssuingAgent</text>
+</g>
+<line x1="2630" y1="226" x2="2750" y2="226" class="edge" />
+<line x1="2630" y1="226" x2="2750" y2="296" class="edge" />
+<line x1="2630" y1="226" x2="2750" y2="366" class="edge" />
+<line x1="2630" y1="226" x2="2750" y2="436" class="edge" />
+<g id="el_3050_212" transform="translate(3050,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An organization which acts on behalf of another.
+Type: AgencyType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Agency</text>
+</g>
+<line x1="3230" y1="226" x2="3350" y2="226" class="edge" />
+<g id="el_3650_212" transform="translate(3650,212)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Code of the agency organization.
+Type: AgencyCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AgencyCode</text>
+</g>
+<g id="el_3050_266" transform="translate(3050,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifier of an agent as assigned by his/her agency.
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AgentID</text>
+</g>
+<g id="el_3050_320" transform="translate(3050,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A personal name given to the individual at birth and used before a family name. Also called first name. E.g. JOHN.
+Type: ProperNameType
+Occurs: [0,5]</title>
+</rect>
+<text x="8" y="18" class="eltext">GivenName</text>
+</g>
+<g id="el_3050_374" transform="translate(3050,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Individual's hereditary name(s) common to all members of a family. Also known as family name or last name. E.g. SMITH. Excludes any potential suffix.
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Surname</text>
+</g>
+<g id="el_2450_266" transform="translate(2450,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A device for printing text or pictures or barcodes, especially one linked to a computer.
+Type: PrinterType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Printer</text>
+</g>
+<line x1="2630" y1="280" x2="2750" y2="280" class="edge" />
+<g id="el_3050_266" transform="translate(3050,266)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Identifier of the device.
+Type: ID_Type
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DeviceID</text>
+</g>
+<g id="el_2450_320" transform="translate(2450,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A Role of an individual person to be a staff of an agency.
+Type: AgentCollapsedType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScanningAgent</text>
+</g>
+<line x1="2630" y1="334" x2="2750" y2="334" class="edge" />
+<line x1="2630" y1="334" x2="2750" y2="404" class="edge" />
+<line x1="2630" y1="334" x2="2750" y2="474" class="edge" />
+<line x1="2630" y1="334" x2="2750" y2="544" class="edge" />
+<g id="el_3050_320" transform="translate(3050,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An organization which acts on behalf of another.
+Type: AgencyType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Agency</text>
+</g>
+<line x1="3230" y1="334" x2="3350" y2="334" class="edge" />
+<g id="el_3650_320" transform="translate(3650,320)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Code of the agency organization.
+Type: AgencyCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AgencyCode</text>
+</g>
+<g id="el_3050_374" transform="translate(3050,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifier of an agent as assigned by his/her agency.
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AgentID</text>
+</g>
+<g id="el_3050_428" transform="translate(3050,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A personal name given to the individual at birth and used before a family name. Also called first name. E.g. JOHN.
+Type: ProperNameType
+Occurs: [0,5]</title>
+</rect>
+<text x="8" y="18" class="eltext">GivenName</text>
+</g>
+<g id="el_3050_482" transform="translate(3050,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Individual's hereditary name(s) common to all members of a family. Also known as family name or last name. E.g. SMITH. Excludes any potential suffix.
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Surname</text>
+</g>
+<g id="el_2450_374" transform="translate(2450,374)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>With Bag Tag Serial Number Code a Bag Tag Issuer may identify bags of her interest. See Resolution 740 Interline Bag Tag
+Type: BagTagSerialNumberID_Type
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SerialNumberID</text>
+</g>
+<g id="el_2450_428" transform="translate(2450,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Unique Transponder identifier, known as TID for Transponder identification
+Type: TransponderID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">TransponderID</text>
+</g>
+<g id="el_2450_482" transform="translate(2450,482)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>With Bag Tag Usage Code a Bag Tag Issuer may differentiate use of the tag. See Resolution 740 Section 3 Use of Tags
+Type: BagTagUsageCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">UsageCode</text>
+</g>
+<g id="el_1850_104" transform="translate(1850,104)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A set of measurable extents of a particular bag, such as length, or height or width.
+Type: BagDimensionsType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Dimensions</text>
+</g>
+<line x1="2030" y1="118" x2="2150" y2="118" class="edge" />
+<line x1="2030" y1="118" x2="2150" y2="188" class="edge" />
+<line x1="2030" y1="118" x2="2150" y2="258" class="edge" />
+<g id="el_2450_104" transform="translate(2450,104)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A measurement or extent of something from end to end
+Type: LengthMeasureType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">HeightMeasure</text>
+</g>
+<g id="el_2450_158" transform="translate(2450,158)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A measurement or extent of something from end to end
+Type: LengthMeasureType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LengthMeasure</text>
+</g>
+<g id="el_2450_212" transform="translate(2450,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A measurement or extent of something from end to end
+Type: LengthMeasureType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">WidthMeasure</text>
+</g>
+<g id="el_1850_158" transform="translate(1850,158)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A single human being as distinct from a group, class, or family.
+Type: IndividualType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Owner</text>
+</g>
+<line x1="2030" y1="172" x2="2150" y2="172" class="edge" />
+<line x1="2030" y1="172" x2="2150" y2="242" class="edge" />
+<line x1="2030" y1="172" x2="2150" y2="312" class="edge" />
+<line x1="2030" y1="172" x2="2150" y2="382" class="edge" />
+<g id="el_2450_158" transform="translate(2450,158)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A personal name given to the individual at birth and used before a family name. Also called first name. E.g. JOHN.
+Type: ProperNameType
+Occurs: [0,5]</title>
+</rect>
+<text x="8" y="18" class="eltext">GivenName</text>
+</g>
+<g id="el_2450_212" transform="translate(2450,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A Bag is owned by an individual who may take role of either passenger or crew member for a given bag segment. In this case, the presence/absence of CREW exception code will tell for each Bag Segment which of the two applies.
+Type: RoleType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Role</text>
+</g>
+<g id="el_2450_266" transform="translate(2450,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Individual's hereditary name(s) common to all members of a family. Also known as family name or last name. E.g. SMITH. Excludes any potential suffix.
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Surname</text>
+</g>
+<g id="el_2450_320" transform="translate(2450,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A word such as Mr., Mrs., Miss or Dr that is used before an individual's name to indicate the gender, profession or marital status.
+Type: SupplementNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">TitleName</text>
+</g>
+<g id="el_1850_212" transform="translate(1850,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A set of properties used to characterize a bag, such as weight, color.
+Type: BagPhysicalPropertiesType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PhysicalProperties</text>
+</g>
+<line x1="2030" y1="226" x2="2150" y2="226" class="edge" />
+<line x1="2030" y1="226" x2="2150" y2="296" class="edge" />
+<line x1="2030" y1="226" x2="2150" y2="366" class="edge" />
+<line x1="2030" y1="226" x2="2150" y2="436" class="edge" />
+<line x1="2030" y1="226" x2="2150" y2="506" class="edge" />
+<line x1="2030" y1="226" x2="2150" y2="576" class="edge" />
+<line x1="2030" y1="226" x2="2150" y2="646" class="edge" />
+<line x1="2030" y1="226" x2="2150" y2="716" class="edge" />
+<g id="el_2450_212" transform="translate(2450,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Descriptive code of the physical property measurement. Refer to resolution 743b baggage type codes.
+Type: BaggageTypeCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageTypeCode</text>
+</g>
+<g id="el_2450_266" transform="translate(2450,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Basic code of the physical property measurement. Refer to resolution 743b basic element codes.
+Type: BagBasicCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BasicCode</text>
+</g>
+<g id="el_2450_320" transform="translate(2450,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Color of the physical property measurement. Refer to resolution 743b color codes.
+Type: BagColorCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ColorCode</text>
+</g>
+<g id="el_2450_374" transform="translate(2450,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Descriptive picture of physical property measurement.
+Type: URI_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DescriptivePictureURI</text>
+</g>
+<g id="el_2450_428" transform="translate(2450,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>External feature of the physical property measurement. Refer to resolution 743b external element codes.
+Type: BagExternalFeatureCodeType
+Occurs: [0,5]</title>
+</rect>
+<text x="8" y="18" class="eltext">ExternalFeatureCode</text>
+</g>
+<g id="el_2450_482" transform="translate(2450,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Material code of the physical property measurement. Refer to resolution 743b description codes.
+Type: BagMaterialCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">MaterialCode</text>
+</g>
+<g id="el_2450_536" transform="translate(2450,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Allowance for Weight for a single Bag
+Type: WeightMeasureType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">WeightAllowanceMeasure</text>
+</g>
+<g id="el_2450_590" transform="translate(2450,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A measurement of the heaviness of a bag. Only checked weight supported.
+Type: WeightMeasureType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">WeightMeasure</text>
+</g>
+<g id="el_1250_104" transform="translate(1250,104)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A series of tasks or steps taken in order to achieve a particular end in the context of baggage logistics.
+Type: BaggageProcessType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageProcess</text>
+</g>
+<line x1="1430" y1="118" x2="1550" y2="118" class="edge" />
+<line x1="1430" y1="118" x2="1550" y2="188" class="edge" />
+<line x1="1430" y1="118" x2="1550" y2="258" class="edge" />
+<line x1="1430" y1="118" x2="1550" y2="328" class="edge" />
+<line x1="1430" y1="118" x2="1550" y2="398" class="edge" />
+<line x1="1430" y1="118" x2="1550" y2="468" class="edge" />
+<g id="el_1850_104" transform="translate(1850,104)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A Role of an individual person to be a staff of an agency.
+Type: AgentCollapsedType
+Occurs: [0,unbounded]</title>
+</rect>
+<text x="8" y="18" class="eltext">Agent</text>
+</g>
+<line x1="2030" y1="118" x2="2150" y2="118" class="edge" />
+<line x1="2030" y1="118" x2="2150" y2="188" class="edge" />
+<line x1="2030" y1="118" x2="2150" y2="258" class="edge" />
+<line x1="2030" y1="118" x2="2150" y2="328" class="edge" />
+<g id="el_2450_104" transform="translate(2450,104)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An organization which acts on behalf of another.
+Type: AgencyType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Agency</text>
+</g>
+<line x1="2630" y1="118" x2="2750" y2="118" class="edge" />
+<g id="el_3050_104" transform="translate(3050,104)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Code of the agency organization.
+Type: AgencyCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AgencyCode</text>
+</g>
+<g id="el_2450_158" transform="translate(2450,158)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifier of an agent as assigned by his/her agency.
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AgentID</text>
+</g>
+<g id="el_2450_212" transform="translate(2450,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A personal name given to the individual at birth and used before a family name. Also called first name. E.g. JOHN.
+Type: ProperNameType
+Occurs: [0,5]</title>
+</rect>
+<text x="8" y="18" class="eltext">GivenName</text>
+</g>
+<g id="el_2450_266" transform="translate(2450,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Individual's hereditary name(s) common to all members of a family. Also known as family name or last name. E.g. SMITH. Excludes any potential suffix.
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Surname</text>
+</g>
+<g id="el_1850_158" transform="translate(1850,158)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A thing that happens in context of baggage logistics. That is a completion and / or commencement of a change, or the outcome of a change, or the arrival of a pre-determined point in time. Specifically, not a thing that takes place.
+Type: BaggageEventType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageEvent</text>
+</g>
+<line x1="2030" y1="172" x2="2150" y2="172" class="edge" />
+<line x1="2030" y1="172" x2="2150" y2="242" class="edge" />
+<line x1="2030" y1="172" x2="2150" y2="312" class="edge" />
+<line x1="2030" y1="172" x2="2150" y2="382" class="edge" />
+<g id="el_2450_158" transform="translate(2450,158)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Actual date and time of the activity.
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ActualDateTime</text>
+</g>
+<g id="el_2450_212" transform="translate(2450,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Event Trigger Qualifier as per RP1745 section 2 .R Augmented Internal Airline Data
+Type: EventTriggerCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">EventTriggerCode</text>
+</g>
+<g id="el_2450_266" transform="translate(2450,266)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+Type: FacilityType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Facility</text>
+</g>
+<line x1="2630" y1="280" x2="2750" y2="280" class="edge" />
+<line x1="2630" y1="280" x2="2750" y2="350" class="edge" />
+<line x1="2630" y1="280" x2="2750" y2="420" class="edge" />
+<line x1="2630" y1="280" x2="2750" y2="490" class="edge" />
+<line x1="2630" y1="280" x2="2750" y2="560" class="edge" />
+<line x1="2630" y1="280" x2="2750" y2="630" class="edge" />
+<g id="el_3050_266" transform="translate(3050,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A classification of Facility according to Facility Type
+Type: BaggageFacilityTypeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityType</text>
+</g>
+<line x1="3230" y1="280" x2="3350" y2="280" class="edge" />
+<g id="el_3650_266" transform="translate(3650,266)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Codification of type
+Type: BaggageFacilityTypeCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityTypeCode</text>
+</g>
+<g id="el_3050_320" transform="translate(3050,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifies facility according to local conventions
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FacilityID</text>
+</g>
+<g id="el_3050_374" transform="translate(3050,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+Type: GeospatialLocationType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">GeospatialLocation</text>
+</g>
+<line x1="3230" y1="388" x2="3350" y2="388" class="edge" />
+<line x1="3230" y1="388" x2="3350" y2="458" class="edge" />
+<line x1="3230" y1="388" x2="3350" y2="528" class="edge" />
+<g id="el_3650_374" transform="translate(3650,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point elevation.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointElevationNumber</text>
+</g>
+<g id="el_3650_428" transform="translate(3650,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point latitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLatitudeNumber</text>
+</g>
+<g id="el_3650_482" transform="translate(3650,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point longitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLongitudeNumber</text>
+</g>
+<g id="el_3050_428" transform="translate(3050,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Names
+ e.g. A12
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Name</text>
+</g>
+<g id="el_3050_482" transform="translate(3050,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+Type: PostalAddressType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalAddress</text>
+</g>
+<line x1="3230" y1="496" x2="3350" y2="496" class="edge" />
+<line x1="3230" y1="496" x2="3350" y2="566" class="edge" />
+<line x1="3230" y1="496" x2="3350" y2="636" class="edge" />
+<line x1="3230" y1="496" x2="3350" y2="706" class="edge" />
+<line x1="3230" y1="496" x2="3350" y2="776" class="edge" />
+<line x1="3230" y1="496" x2="3350" y2="846" class="edge" />
+<g id="el_3650_482" transform="translate(3650,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Additional address information including building name, room, apartment, or suite number.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BuildingRoomText</text>
+</g>
+<g id="el_3650_536" transform="translate(3650,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+Type: CityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">City</text>
+</g>
+<line x1="3830" y1="550" x2="3950" y2="550" class="edge" />
+<g id="el_4250_536" transform="translate(4250,536)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>The name, expressed as text, of the city, town or village.
+Type: ProperNameType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CityName</text>
+</g>
+<g id="el_3650_590" transform="translate(3650,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LabelText</text>
+</g>
+<g id="el_3650_644" transform="translate(3650,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Post office box. For example: P.O. Box 21.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PO_BoxCode</text>
+</g>
+<g id="el_3650_698" transform="translate(3650,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Postal code. For example: 11001, 11001-2345.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalCode</text>
+</g>
+<g id="el_3650_752" transform="translate(3650,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Street name and number. For example: Main Street, 100 Main Street.
+Type: TextType
+Occurs: [0,2]</title>
+</rect>
+<text x="8" y="18" class="eltext">StreetText</text>
+</g>
+<g id="el_3050_536" transform="translate(3050,536)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.
+Type: StationType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Station</text>
+</g>
+<line x1="3230" y1="550" x2="3350" y2="550" class="edge" />
+<g id="el_3650_536" transform="translate(3650,536)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IATA_LocationCode</text>
+</g>
+<g id="el_2450_320" transform="translate(2450,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A device that scans objects and converts them into or extracts digital data. E.g. document scanner, barcode reader, biometric scanner.
+Type: ScannerType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Scanner</text>
+</g>
+<line x1="2630" y1="334" x2="2750" y2="334" class="edge" />
+<g id="el_3050_320" transform="translate(3050,320)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Identifier of the technology device.
+Type: ID_Type
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScannerID</text>
+</g>
+<g id="el_1850_212" transform="translate(1850,212)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Top level baggage process name. 
+ Distinguishes between Local departing baggage (L), Transfer arriving baggage (F), Transfer departing baggage (T), and Terminating arriving baggage (X)
+Type: BaggageProcessCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageProcessCode</text>
+</g>
+<g id="el_1850_266" transform="translate(1850,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Secondary level baggage process naming
+ Follows baggage journey (bag, cart, ULD)
+Type: BaggageSubProcessCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageSubProcessCode</text>
+</g>
+<g id="el_1850_320" transform="translate(1850,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Tertiary level of baggage process identification
+ Reports the task level
+Type: BaggageSubSubProcessCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageSubSubProcessCode</text>
+</g>
+<g id="el_1850_374" transform="translate(1850,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Description of the process
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DescText</text>
+</g>
+<g id="el_1250_158" transform="translate(1250,158)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A collapsed view on an operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
+Type: DatedOperatingSegmentCollapsedType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarryingSegment</text>
+</g>
+<line x1="1430" y1="172" x2="1550" y2="172" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="242" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="312" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="382" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="452" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="522" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="592" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="662" class="edge" />
+<line x1="1430" y1="172" x2="1550" y2="732" class="edge" />
+<g id="el_1850_158" transform="translate(1850,158)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Scheduled date and time of departure of the aircraft at the terminal or departure gate at an airport.
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AircraftScheduledDepDateTime</text>
+</g>
+<g id="el_1850_212" transform="translate(1850,212)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ArrivalIATA_LocationCode</text>
+</g>
+<g id="el_1850_266" transform="translate(1850,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.
+Type: IATA_TerminalCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ArrivalTerminalCode</text>
+</g>
+<g id="el_1850_320" transform="translate(1850,320)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>ICAO-defined 3-character code or IATA-defined 2-character code assigned to the carrier. For example: BA is British Airways PLC, 2C is SNCF and is also CMA CGM Air Cargo.
+Type: AirlineDesigCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarrierDesigCode</text>
+</g>
+<g id="el_1850_374" transform="translate(1850,374)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DepIATA_LocationCode</text>
+</g>
+<g id="el_1850_428" transform="translate(1850,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.
+Type: IATA_TerminalCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DepTerminalCode</text>
+</g>
+<g id="el_1850_482" transform="translate(1850,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>(UTC) date of the scheduled aircraft departure from the station of origin.
+Type: DateType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FlightID_Date</text>
+</g>
+<g id="el_1850_536" transform="translate(1850,536)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Numerical designation of a flight as it is operated by a carrier.
+Type: FlightNumberTextType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FlightNumberText</text>
+</g>
+<g id="el_1850_590" transform="translate(1850,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>from SIX XSD: Alphabetical character following a flight number assigned for operational purposes. SSIM: A code assigned by the administrating carrier for operational purposes.
+Type: OperationalSuffixTextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">OperationalSuffixText</text>
+</g>
+<g id="el_1250_212" transform="translate(1250,212)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of change indicator.
+Type: ChangeIndCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ChangeIndCode</text>
+</g>
+<g id="el_1250_266" transform="translate(1250,266)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code used to identify a particular Reservations Booking Designator. For example: P, J, W, M.
+Type: RBD_CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ClassOfServiceCode</text>
+</g>
+<g id="el_1250_320" transform="translate(1250,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A collection reports when an item is (planned to be) collected at a facility potentially using a vehicle
+Type: CollectionType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Collection</text>
+</g>
+<line x1="1430" y1="334" x2="1550" y2="334" class="edge" />
+<line x1="1430" y1="334" x2="1550" y2="404" class="edge" />
+<line x1="1430" y1="334" x2="1550" y2="474" class="edge" />
+<line x1="1430" y1="334" x2="1550" y2="544" class="edge" />
+<g id="el_1850_320" transform="translate(1850,320)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Earliest or targetted time for collection
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">EarliestDateTime</text>
+</g>
+<g id="el_1850_374" transform="translate(1850,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+Type: FacilityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Facility</text>
+</g>
+<line x1="2030" y1="388" x2="2150" y2="388" class="edge" />
+<line x1="2030" y1="388" x2="2150" y2="458" class="edge" />
+<line x1="2030" y1="388" x2="2150" y2="528" class="edge" />
+<line x1="2030" y1="388" x2="2150" y2="598" class="edge" />
+<line x1="2030" y1="388" x2="2150" y2="668" class="edge" />
+<line x1="2030" y1="388" x2="2150" y2="738" class="edge" />
+<g id="el_2450_374" transform="translate(2450,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A classification of Facility according to Facility Type
+Type: BaggageFacilityTypeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityType</text>
+</g>
+<line x1="2630" y1="388" x2="2750" y2="388" class="edge" />
+<g id="el_3050_374" transform="translate(3050,374)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Codification of type
+Type: BaggageFacilityTypeCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityTypeCode</text>
+</g>
+<g id="el_2450_428" transform="translate(2450,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifies facility according to local conventions
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FacilityID</text>
+</g>
+<g id="el_2450_482" transform="translate(2450,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+Type: GeospatialLocationType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">GeospatialLocation</text>
+</g>
+<line x1="2630" y1="496" x2="2750" y2="496" class="edge" />
+<line x1="2630" y1="496" x2="2750" y2="566" class="edge" />
+<line x1="2630" y1="496" x2="2750" y2="636" class="edge" />
+<g id="el_3050_482" transform="translate(3050,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point elevation.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointElevationNumber</text>
+</g>
+<g id="el_3050_536" transform="translate(3050,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point latitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLatitudeNumber</text>
+</g>
+<g id="el_3050_590" transform="translate(3050,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point longitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLongitudeNumber</text>
+</g>
+<g id="el_2450_536" transform="translate(2450,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Names
+ e.g. A12
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Name</text>
+</g>
+<g id="el_2450_590" transform="translate(2450,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+Type: PostalAddressType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalAddress</text>
+</g>
+<line x1="2630" y1="604" x2="2750" y2="604" class="edge" />
+<line x1="2630" y1="604" x2="2750" y2="674" class="edge" />
+<line x1="2630" y1="604" x2="2750" y2="744" class="edge" />
+<line x1="2630" y1="604" x2="2750" y2="814" class="edge" />
+<line x1="2630" y1="604" x2="2750" y2="884" class="edge" />
+<line x1="2630" y1="604" x2="2750" y2="954" class="edge" />
+<g id="el_3050_590" transform="translate(3050,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Additional address information including building name, room, apartment, or suite number.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BuildingRoomText</text>
+</g>
+<g id="el_3050_644" transform="translate(3050,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+Type: CityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">City</text>
+</g>
+<line x1="3230" y1="658" x2="3350" y2="658" class="edge" />
+<g id="el_3650_644" transform="translate(3650,644)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>The name, expressed as text, of the city, town or village.
+Type: ProperNameType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CityName</text>
+</g>
+<g id="el_3050_698" transform="translate(3050,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LabelText</text>
+</g>
+<g id="el_3050_752" transform="translate(3050,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Post office box. For example: P.O. Box 21.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PO_BoxCode</text>
+</g>
+<g id="el_3050_806" transform="translate(3050,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Postal code. For example: 11001, 11001-2345.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalCode</text>
+</g>
+<g id="el_3050_860" transform="translate(3050,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Street name and number. For example: Main Street, 100 Main Street.
+Type: TextType
+Occurs: [0,2]</title>
+</rect>
+<text x="8" y="18" class="eltext">StreetText</text>
+</g>
+<g id="el_2450_644" transform="translate(2450,644)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.
+Type: StationType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Station</text>
+</g>
+<line x1="2630" y1="658" x2="2750" y2="658" class="edge" />
+<g id="el_3050_644" transform="translate(3050,644)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IATA_LocationCode</text>
+</g>
+<g id="el_1850_428" transform="translate(1850,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Latest time for collection
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LatestDateTime</text>
+</g>
+<g id="el_1850_482" transform="translate(1850,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A means used for transporting people or goods, on land or water. E.g. train, bus, van, ship.
+Type: SurfaceTransportVehicleType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportVehicle</text>
+</g>
+<line x1="2030" y1="496" x2="2150" y2="496" class="edge" />
+<line x1="2030" y1="496" x2="2150" y2="566" class="edge" />
+<g id="el_2450_482" transform="translate(2450,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The code of the carriage medium, i.e. type of transport vehicle.
+Type: CarriageMediumCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarriageMediumCode</text>
+</g>
+<g id="el_2450_536" transform="translate(2450,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The identifier of the surface transport vehicle.
+Type: SurfaceTransportID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportID</text>
+</g>
+<g id="el_1250_374" transform="translate(1250,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A completed allocation of a bag to a specific set of consecutive legs
+Type: BagSegmentDeliveringDaughterType
+Occurs: [0,unbounded]</title>
+</rect>
+<text x="8" y="18" class="eltext">DeliveringBagSegment</text>
+</g>
+<line x1="1430" y1="388" x2="1550" y2="388" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="458" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="528" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="598" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="668" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="738" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="808" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="878" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="948" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="1018" class="edge" />
+<line x1="1430" y1="388" x2="1550" y2="1088" class="edge" />
+<g id="el_1850_374" transform="translate(1850,374)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Scheduled date and time of departure of the aircraft at the terminal or departure gate at an airport.
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AircraftScheduledDepDateTime</text>
+</g>
+<g id="el_1850_428" transform="translate(1850,428)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ArrivalIATA_LocationCode</text>
+</g>
+<g id="el_1850_482" transform="translate(1850,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.
+Type: IATA_TerminalCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ArrivalTerminalCode</text>
+</g>
+<g id="el_1850_536" transform="translate(1850,536)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>ICAO-defined 3-character code or IATA-defined 2-character code assigned to the carrier. For example: BA is British Airways PLC, 2C is SNCF and is also CMA CGM Air Cargo
+Type: AirlineDesigCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarrierDesigCode</text>
+</g>
+<g id="el_1850_590" transform="translate(1850,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code used to identify a particular Reservations Booking Designator. For example: P, J, W, M.
+Type: RBD_CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ClassOfServiceCode</text>
+</g>
+<g id="el_1850_644" transform="translate(1850,644)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Indicates position in sequence of delivering Bag Segments following the journey
+Type: OrdinalType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DeliveringJourneyOrdinal</text>
+</g>
+<g id="el_1850_698" transform="translate(1850,698)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DepIATA_LocationCode</text>
+</g>
+<g id="el_1850_752" transform="translate(1850,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.
+Type: IATA_TerminalCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DepTerminalCode</text>
+</g>
+<g id="el_1850_806" transform="translate(1850,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>(UTC) date of the scheduled aircraft departure from the station of origin.
+Type: DateType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FlightID_Date</text>
+</g>
+<g id="el_1850_860" transform="translate(1850,860)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Numerical designation of a flight as it is operated by a carrier.
+Type: FlightNumberTextType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FlightNumberText</text>
+</g>
+<g id="el_1850_914" transform="translate(1850,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>from SIX XSD: Alphabetical character following a flight number assigned for operational purposes. SSIM: A code assigned by the administrating carrier for operational purposes.
+Type: OperationalSuffixTextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">OperationalSuffixText</text>
+</g>
+<g id="el_1250_428" transform="translate(1250,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A delivery reports when an item is (planned to be) delivered at a facility potentially using a vehicle
+Type: DeliveryType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Delivery</text>
+</g>
+<line x1="1430" y1="442" x2="1550" y2="442" class="edge" />
+<line x1="1430" y1="442" x2="1550" y2="512" class="edge" />
+<line x1="1430" y1="442" x2="1550" y2="582" class="edge" />
+<line x1="1430" y1="442" x2="1550" y2="652" class="edge" />
+<g id="el_1850_428" transform="translate(1850,428)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Earliest or target time for delivery
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">EarliestDateTime</text>
+</g>
+<g id="el_1850_482" transform="translate(1850,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+Type: FacilityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Facility</text>
+</g>
+<line x1="2030" y1="496" x2="2150" y2="496" class="edge" />
+<line x1="2030" y1="496" x2="2150" y2="566" class="edge" />
+<line x1="2030" y1="496" x2="2150" y2="636" class="edge" />
+<line x1="2030" y1="496" x2="2150" y2="706" class="edge" />
+<line x1="2030" y1="496" x2="2150" y2="776" class="edge" />
+<line x1="2030" y1="496" x2="2150" y2="846" class="edge" />
+<g id="el_2450_482" transform="translate(2450,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A classification of Facility according to Facility Type
+Type: BaggageFacilityTypeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityType</text>
+</g>
+<line x1="2630" y1="496" x2="2750" y2="496" class="edge" />
+<g id="el_3050_482" transform="translate(3050,482)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Codification of type
+Type: BaggageFacilityTypeCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityTypeCode</text>
+</g>
+<g id="el_2450_536" transform="translate(2450,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifies facility according to local conventions
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FacilityID</text>
+</g>
+<g id="el_2450_590" transform="translate(2450,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+Type: GeospatialLocationType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">GeospatialLocation</text>
+</g>
+<line x1="2630" y1="604" x2="2750" y2="604" class="edge" />
+<line x1="2630" y1="604" x2="2750" y2="674" class="edge" />
+<line x1="2630" y1="604" x2="2750" y2="744" class="edge" />
+<g id="el_3050_590" transform="translate(3050,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point elevation.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointElevationNumber</text>
+</g>
+<g id="el_3050_644" transform="translate(3050,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point latitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLatitudeNumber</text>
+</g>
+<g id="el_3050_698" transform="translate(3050,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point longitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLongitudeNumber</text>
+</g>
+<g id="el_2450_644" transform="translate(2450,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Names
+ e.g. A12
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Name</text>
+</g>
+<g id="el_2450_698" transform="translate(2450,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+Type: PostalAddressType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalAddress</text>
+</g>
+<line x1="2630" y1="712" x2="2750" y2="712" class="edge" />
+<line x1="2630" y1="712" x2="2750" y2="782" class="edge" />
+<line x1="2630" y1="712" x2="2750" y2="852" class="edge" />
+<line x1="2630" y1="712" x2="2750" y2="922" class="edge" />
+<line x1="2630" y1="712" x2="2750" y2="992" class="edge" />
+<line x1="2630" y1="712" x2="2750" y2="1062" class="edge" />
+<g id="el_3050_698" transform="translate(3050,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Additional address information including building name, room, apartment, or suite number.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BuildingRoomText</text>
+</g>
+<g id="el_3050_752" transform="translate(3050,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+Type: CityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">City</text>
+</g>
+<line x1="3230" y1="766" x2="3350" y2="766" class="edge" />
+<g id="el_3650_752" transform="translate(3650,752)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>The name, expressed as text, of the city, town or village.
+Type: ProperNameType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CityName</text>
+</g>
+<g id="el_3050_806" transform="translate(3050,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LabelText</text>
+</g>
+<g id="el_3050_860" transform="translate(3050,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Post office box. For example: P.O. Box 21.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PO_BoxCode</text>
+</g>
+<g id="el_3050_914" transform="translate(3050,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Postal code. For example: 11001, 11001-2345.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalCode</text>
+</g>
+<g id="el_3050_968" transform="translate(3050,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Street name and number. For example: Main Street, 100 Main Street.
+Type: TextType
+Occurs: [0,2]</title>
+</rect>
+<text x="8" y="18" class="eltext">StreetText</text>
+</g>
+<g id="el_2450_752" transform="translate(2450,752)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.
+Type: StationType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Station</text>
+</g>
+<line x1="2630" y1="766" x2="2750" y2="766" class="edge" />
+<g id="el_3050_752" transform="translate(3050,752)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IATA_LocationCode</text>
+</g>
+<g id="el_1850_536" transform="translate(1850,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Latest time for delivery
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LatestDateTime</text>
+</g>
+<g id="el_1850_590" transform="translate(1850,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A means used for transporting people or goods, on land or water. E.g. train, bus, van, ship.
+Type: SurfaceTransportVehicleType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportVehicle</text>
+</g>
+<line x1="2030" y1="604" x2="2150" y2="604" class="edge" />
+<line x1="2030" y1="604" x2="2150" y2="674" class="edge" />
+<g id="el_2450_590" transform="translate(2450,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The code of the carriage medium, i.e. type of transport vehicle.
+Type: CarriageMediumCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarriageMediumCode</text>
+</g>
+<g id="el_2450_644" transform="translate(2450,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The identifier of the surface transport vehicle.
+Type: SurfaceTransportID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportID</text>
+</g>
+<g id="el_1250_482" transform="translate(1250,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Baggage Exception as per RP1745 Attachment A Section 1
+Type: BagSegmentExceptionType
+Occurs: [0,unbounded]</title>
+</rect>
+<text x="8" y="18" class="eltext">Exception</text>
+</g>
+<line x1="1430" y1="496" x2="1550" y2="496" class="edge" />
+<g id="el_1850_482" transform="translate(1850,482)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Exception code of the exception control. An exception control is a item that is excluded from a general statement or does not follow a rule.
+Type: ExceptionCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ExceptionCode</text>
+</g>
+<g id="el_1250_536" transform="translate(1250,536)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>For airline to determine its use and meaning in extension of standard
+Type: InternalAirlineDataTextType
+Occurs: [0,10]</title>
+</rect>
+<text x="8" y="18" class="eltext">InternalAirlineData</text>
+</g>
+<g id="el_1250_590" transform="translate(1250,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An account set up for a customer within a rewards program which holds funds on behalf of that customer.
+Type: LoyaltyProgramAccountType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LoyaltyProgramAccount</text>
+</g>
+<line x1="1430" y1="604" x2="1550" y2="604" class="edge" />
+<line x1="1430" y1="604" x2="1550" y2="674" class="edge" />
+<g id="el_1850_590" transform="translate(1850,590)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Loyalty Program account number.
+ Example: ABC123456
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LoyaltyProgramAccountID</text>
+</g>
+<g id="el_1850_644" transform="translate(1850,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifier for Loyalty Program tier Level.
+ Example: GOLD
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LoyaltyProgramAccountTierLevelCode</text>
+</g>
+<g id="el_1250_644" transform="translate(1250,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A anticipated allocation of a bag to a specific set of consecutive legs
+Type: BagSegmentOnwardDaughterType
+Occurs: [0,unbounded]</title>
+</rect>
+<text x="8" y="18" class="eltext">OnwardBagSegment</text>
+</g>
+<line x1="1430" y1="658" x2="1550" y2="658" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="728" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="798" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="868" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="938" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="1008" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="1078" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="1148" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="1218" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="1288" class="edge" />
+<line x1="1430" y1="658" x2="1550" y2="1358" class="edge" />
+<g id="el_1850_644" transform="translate(1850,644)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Scheduled date and time of departure of the aircraft at the terminal or departure gate at an airport.
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AircraftScheduledDepDateTime</text>
+</g>
+<g id="el_1850_698" transform="translate(1850,698)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ArrivalIATA_LocationCode</text>
+</g>
+<g id="el_1850_752" transform="translate(1850,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.
+Type: IATA_TerminalCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ArrivalTerminalCode</text>
+</g>
+<g id="el_1850_806" transform="translate(1850,806)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>ICAO-defined 3-character code or IATA-defined 2-character code assigned to the carrier. For example: BA is British Airways PLC, 2C is SNCF and is also CMA CGM Air Cargo
+Type: AirlineDesigCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarrierDesigCode</text>
+</g>
+<g id="el_1850_860" transform="translate(1850,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code used to identify a particular Reservations Booking Designator. For example: P, J, W, M.
+Type: RBD_CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ClassOfServiceCode</text>
+</g>
+<g id="el_1850_914" transform="translate(1850,914)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DepIATA_LocationCode</text>
+</g>
+<g id="el_1850_968" transform="translate(1850,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the terminal infrastructure facility, as defined by IATA SSIM Appendix D. For example: '2W'.
+Type: IATA_TerminalCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">DepTerminalCode</text>
+</g>
+<g id="el_1850_1022" transform="translate(1850,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>(UTC) date of the scheduled aircraft departure from the station of origin.
+Type: DateType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FlightID_Date</text>
+</g>
+<g id="el_1850_1076" transform="translate(1850,1076)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Numerical designation of a flight as it is operated by a carrier.
+Type: FlightNumberTextType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FlightNumberText</text>
+</g>
+<g id="el_1850_1130" transform="translate(1850,1130)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Indicates position in sequence of onward Bag Segments following the journey
+Type: OrdinalType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">OnwardJourneyOrdinal</text>
+</g>
+<g id="el_1850_1184" transform="translate(1850,1184)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>from SIX XSD: Alphabetical character following a flight number assigned for operational purposes. SSIM: A code assigned by the administrating carrier for operational purposes.
+Type: OperationalSuffixTextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">OperationalSuffixText</text>
+</g>
+<g id="el_1250_698" transform="translate(1250,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A recap of received statements on allocation of a bag to a specific set of consecutive legs and a load position in vehicle performing the legs
+Type: BagSegmentRecapsType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">RecapOutcomes</text>
+</g>
+<line x1="1430" y1="712" x2="1550" y2="712" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="782" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="852" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="922" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="992" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="1062" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="1132" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="1202" class="edge" />
+<line x1="1430" y1="712" x2="1550" y2="1272" class="edge" />
+<g id="el_1850_698" transform="translate(1850,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A set of statuses of baggage at a particular time in a process.
+Type: BaggageStatusesType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageState</text>
+</g>
+<line x1="2030" y1="712" x2="2150" y2="712" class="edge" />
+<line x1="2030" y1="712" x2="2150" y2="782" class="edge" />
+<line x1="2030" y1="712" x2="2150" y2="852" class="edge" />
+<g id="el_2450_698" transform="translate(2450,698)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Expresses conformance enforcements over the baggage item
+ 
+ closed, sealed, screened, inspected, verified, reconciled
+Type: ConformanceStateCodeType
+Occurs: [0,10]</title>
+</rect>
+<text x="8" y="18" class="eltext">ConformanceStateCode</text>
+</g>
+<g id="el_2450_752" transform="translate(2450,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Expresses control over the baggage item
+Type: ControlStateCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ControlStateCode</text>
+</g>
+<g id="el_2450_806" transform="translate(2450,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Tracks various incidents
+Type: IncidentStateCodeType
+Occurs: [0,10]</title>
+</rect>
+<text x="8" y="18" class="eltext">IncidentStateCode</text>
+</g>
+<g id="el_1850_752" transform="translate(1850,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code used to identify a particular Reservations Booking Designator. For example: P, J, W, M.
+Type: RBD_CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ClassOfServiceCode</text>
+</g>
+<g id="el_1850_806" transform="translate(1850,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A collection reports when an item is (planned to be) collected at a facility potentially using a vehicle
+Type: CollectionType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Collection</text>
+</g>
+<line x1="2030" y1="820" x2="2150" y2="820" class="edge" />
+<line x1="2030" y1="820" x2="2150" y2="890" class="edge" />
+<line x1="2030" y1="820" x2="2150" y2="960" class="edge" />
+<line x1="2030" y1="820" x2="2150" y2="1030" class="edge" />
+<g id="el_2450_806" transform="translate(2450,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Earliest or targetted time for collection
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">EarliestDateTime</text>
+</g>
+<g id="el_2450_860" transform="translate(2450,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+Type: FacilityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Facility</text>
+</g>
+<line x1="2630" y1="874" x2="2750" y2="874" class="edge" />
+<line x1="2630" y1="874" x2="2750" y2="944" class="edge" />
+<line x1="2630" y1="874" x2="2750" y2="1014" class="edge" />
+<line x1="2630" y1="874" x2="2750" y2="1084" class="edge" />
+<line x1="2630" y1="874" x2="2750" y2="1154" class="edge" />
+<line x1="2630" y1="874" x2="2750" y2="1224" class="edge" />
+<g id="el_3050_860" transform="translate(3050,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A classification of Facility according to Facility Type
+Type: BaggageFacilityTypeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityType</text>
+</g>
+<line x1="3230" y1="874" x2="3350" y2="874" class="edge" />
+<g id="el_3650_860" transform="translate(3650,860)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Codification of type
+Type: BaggageFacilityTypeCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityTypeCode</text>
+</g>
+<g id="el_3050_914" transform="translate(3050,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifies facility according to local conventions
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FacilityID</text>
+</g>
+<g id="el_3050_968" transform="translate(3050,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+Type: GeospatialLocationType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">GeospatialLocation</text>
+</g>
+<line x1="3230" y1="982" x2="3350" y2="982" class="edge" />
+<line x1="3230" y1="982" x2="3350" y2="1052" class="edge" />
+<line x1="3230" y1="982" x2="3350" y2="1122" class="edge" />
+<g id="el_3650_968" transform="translate(3650,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point elevation.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointElevationNumber</text>
+</g>
+<g id="el_3650_1022" transform="translate(3650,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point latitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLatitudeNumber</text>
+</g>
+<g id="el_3650_1076" transform="translate(3650,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point longitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLongitudeNumber</text>
+</g>
+<g id="el_3050_1022" transform="translate(3050,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Names
+ e.g. A12
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Name</text>
+</g>
+<g id="el_3050_1076" transform="translate(3050,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+Type: PostalAddressType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalAddress</text>
+</g>
+<line x1="3230" y1="1090" x2="3350" y2="1090" class="edge" />
+<line x1="3230" y1="1090" x2="3350" y2="1160" class="edge" />
+<line x1="3230" y1="1090" x2="3350" y2="1230" class="edge" />
+<line x1="3230" y1="1090" x2="3350" y2="1300" class="edge" />
+<line x1="3230" y1="1090" x2="3350" y2="1370" class="edge" />
+<line x1="3230" y1="1090" x2="3350" y2="1440" class="edge" />
+<g id="el_3650_1076" transform="translate(3650,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Additional address information including building name, room, apartment, or suite number.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BuildingRoomText</text>
+</g>
+<g id="el_3650_1130" transform="translate(3650,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+Type: CityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">City</text>
+</g>
+<line x1="3830" y1="1144" x2="3950" y2="1144" class="edge" />
+<g id="el_4250_1130" transform="translate(4250,1130)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>The name, expressed as text, of the city, town or village.
+Type: ProperNameType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CityName</text>
+</g>
+<g id="el_3650_1184" transform="translate(3650,1184)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LabelText</text>
+</g>
+<g id="el_3650_1238" transform="translate(3650,1238)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Post office box. For example: P.O. Box 21.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PO_BoxCode</text>
+</g>
+<g id="el_3650_1292" transform="translate(3650,1292)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Postal code. For example: 11001, 11001-2345.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalCode</text>
+</g>
+<g id="el_3650_1346" transform="translate(3650,1346)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Street name and number. For example: Main Street, 100 Main Street.
+Type: TextType
+Occurs: [0,2]</title>
+</rect>
+<text x="8" y="18" class="eltext">StreetText</text>
+</g>
+<g id="el_3050_1130" transform="translate(3050,1130)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.
+Type: StationType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Station</text>
+</g>
+<line x1="3230" y1="1144" x2="3350" y2="1144" class="edge" />
+<g id="el_3650_1130" transform="translate(3650,1130)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IATA_LocationCode</text>
+</g>
+<g id="el_2450_914" transform="translate(2450,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Latest time for collection
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LatestDateTime</text>
+</g>
+<g id="el_2450_968" transform="translate(2450,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A means used for transporting people or goods, on land or water. E.g. train, bus, van, ship.
+Type: SurfaceTransportVehicleType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportVehicle</text>
+</g>
+<line x1="2630" y1="982" x2="2750" y2="982" class="edge" />
+<line x1="2630" y1="982" x2="2750" y2="1052" class="edge" />
+<g id="el_3050_968" transform="translate(3050,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The code of the carriage medium, i.e. type of transport vehicle.
+Type: CarriageMediumCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarriageMediumCode</text>
+</g>
+<g id="el_3050_1022" transform="translate(3050,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The identifier of the surface transport vehicle.
+Type: SurfaceTransportID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportID</text>
+</g>
+<g id="el_1850_860" transform="translate(1850,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A delivery reports when an item is (planned to be) delivered at a facility potentially using a vehicle
+Type: DeliveryType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Delivery</text>
+</g>
+<line x1="2030" y1="874" x2="2150" y2="874" class="edge" />
+<line x1="2030" y1="874" x2="2150" y2="944" class="edge" />
+<line x1="2030" y1="874" x2="2150" y2="1014" class="edge" />
+<line x1="2030" y1="874" x2="2150" y2="1084" class="edge" />
+<g id="el_2450_860" transform="translate(2450,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Earliest or target time for delivery
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">EarliestDateTime</text>
+</g>
+<g id="el_2450_914" transform="translate(2450,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An infrastructure (such as an airfield) that is built, installed, or established to serve a particular purpose
+ Examples: an aircraft stand, a baggage cart, a gate, a high loader
+Type: FacilityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Facility</text>
+</g>
+<line x1="2630" y1="928" x2="2750" y2="928" class="edge" />
+<line x1="2630" y1="928" x2="2750" y2="998" class="edge" />
+<line x1="2630" y1="928" x2="2750" y2="1068" class="edge" />
+<line x1="2630" y1="928" x2="2750" y2="1138" class="edge" />
+<line x1="2630" y1="928" x2="2750" y2="1208" class="edge" />
+<line x1="2630" y1="928" x2="2750" y2="1278" class="edge" />
+<g id="el_3050_914" transform="translate(3050,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A classification of Facility according to Facility Type
+Type: BaggageFacilityTypeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityType</text>
+</g>
+<line x1="3230" y1="928" x2="3350" y2="928" class="edge" />
+<g id="el_3650_914" transform="translate(3650,914)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Codification of type
+Type: BaggageFacilityTypeCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BaggageFacilityTypeCode</text>
+</g>
+<g id="el_3050_968" transform="translate(3050,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifies facility according to local conventions
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">FacilityID</text>
+</g>
+<g id="el_3050_1022" transform="translate(3050,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A location with a spatial attribute, probably on the surface of the earth. For example: Longitude and Latitude
+Type: GeospatialLocationType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">GeospatialLocation</text>
+</g>
+<line x1="3230" y1="1036" x2="3350" y2="1036" class="edge" />
+<line x1="3230" y1="1036" x2="3350" y2="1106" class="edge" />
+<line x1="3230" y1="1036" x2="3350" y2="1176" class="edge" />
+<g id="el_3650_1022" transform="translate(3650,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point elevation.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointElevationNumber</text>
+</g>
+<g id="el_3650_1076" transform="translate(3650,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point latitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLatitudeNumber</text>
+</g>
+<g id="el_3650_1130" transform="translate(3650,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The number of the spatial location point longitude.
+Type: NumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PointLongitudeNumber</text>
+</g>
+<g id="el_3050_1076" transform="translate(3050,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Names
+ e.g. A12
+Type: ProperNameType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Name</text>
+</g>
+<g id="el_3050_1130" transform="translate(3050,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A natural or physical address used for postal service. May be a building address, airport address, etc.
+Type: PostalAddressType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalAddress</text>
+</g>
+<line x1="3230" y1="1144" x2="3350" y2="1144" class="edge" />
+<line x1="3230" y1="1144" x2="3350" y2="1214" class="edge" />
+<line x1="3230" y1="1144" x2="3350" y2="1284" class="edge" />
+<line x1="3230" y1="1144" x2="3350" y2="1354" class="edge" />
+<line x1="3230" y1="1144" x2="3350" y2="1424" class="edge" />
+<line x1="3230" y1="1144" x2="3350" y2="1494" class="edge" />
+<g id="el_3650_1130" transform="translate(3650,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Additional address information including building name, room, apartment, or suite number.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BuildingRoomText</text>
+</g>
+<g id="el_3650_1184" transform="translate(3650,1184)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address, or metropolitan area)
+Type: CityType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">City</text>
+</g>
+<line x1="3830" y1="1198" x2="3950" y2="1198" class="edge" />
+<g id="el_4250_1184" transform="translate(4250,1184)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>The name, expressed as text, of the city, town or village.
+Type: ProperNameType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CityName</text>
+</g>
+<g id="el_3650_1238" transform="translate(3650,1238)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Used to differentiate multiple Postal Addresses of one contact. For example: AddressAtOrigin or AddressAtDestination.
+Type: TextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LabelText</text>
+</g>
+<g id="el_3650_1292" transform="translate(3650,1292)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Post office box. For example: P.O. Box 21.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PO_BoxCode</text>
+</g>
+<g id="el_3650_1346" transform="translate(3650,1346)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Postal code. For example: 11001, 11001-2345.
+Type: CodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PostalCode</text>
+</g>
+<g id="el_3650_1400" transform="translate(3650,1400)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Street name and number. For example: Main Street, 100 Main Street.
+Type: TextType
+Occurs: [0,2]</title>
+</rect>
+<text x="8" y="18" class="eltext">StreetText</text>
+</g>
+<g id="el_3050_1184" transform="translate(3050,1184)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>A Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off.
+Type: StationType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Station</text>
+</g>
+<line x1="3230" y1="1198" x2="3350" y2="1198" class="edge" />
+<g id="el_3650_1184" transform="translate(3650,1184)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>IATA defined code identifying a city or station.
+Type: IATA_LocationCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">IATA_LocationCode</text>
+</g>
+<g id="el_2450_968" transform="translate(2450,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Latest time for delivery
+Type: DateTimeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LatestDateTime</text>
+</g>
+<g id="el_2450_1022" transform="translate(2450,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A means used for transporting people or goods, on land or water. E.g. train, bus, van, ship.
+Type: SurfaceTransportVehicleType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportVehicle</text>
+</g>
+<line x1="2630" y1="1036" x2="2750" y2="1036" class="edge" />
+<line x1="2630" y1="1036" x2="2750" y2="1106" class="edge" />
+<g id="el_3050_1022" transform="translate(3050,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The code of the carriage medium, i.e. type of transport vehicle.
+Type: CarriageMediumCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CarriageMediumCode</text>
+</g>
+<g id="el_3050_1076" transform="translate(3050,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The identifier of the surface transport vehicle.
+Type: SurfaceTransportID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SurfaceTransportID</text>
+</g>
+<g id="el_1850_914" transform="translate(1850,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A space designated within a hold that can be containerized/palletized or not.
+Type: HoldCompartmentType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">HoldCompartment</text>
+</g>
+<line x1="2030" y1="928" x2="2150" y2="928" class="edge" />
+<line x1="2030" y1="928" x2="2150" y2="998" class="edge" />
+<g id="el_2450_914" transform="translate(2450,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifies a compartment within a hold (compartment no). As per AHM505, compartments are numbered from 1 to 6. A second figure can indicate a section in a compartment starting from the front to the back and from right to left.
+Type: HoldCompartmentID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">HoldCompartmentID</text>
+</g>
+<g id="el_2450_968" transform="translate(2450,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifies a hold within a deck. Typical values include FWD (forward), AFT, BULK, MAIN (deck).
+Type: HoldID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">HoldID</text>
+</g>
+<g id="el_1850_968" transform="translate(1850,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>For airline to determine its use and meaning in extension of standard
+Type: InternalAirlineDataTextType
+Occurs: [0,10]</title>
+</rect>
+<text x="8" y="18" class="eltext">InternalAirlineText</text>
+</g>
+<g id="el_1850_1022" transform="translate(1850,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>This is the sequence number in which the baggage item was loaded into the stowage device.
+Type: OrdinalType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">LoadSeqOrdinal</text>
+</g>
+<g id="el_1850_1076" transform="translate(1850,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>bag is packed into either ULD or Cart
+Type: PackIntoType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PackInto</text>
+</g>
+<g id="el_1850_1130" transform="translate(1850,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A set of outcomes of applying Segment Security Controls to Baggage Process
+Type: SegmentSecurityOutcomesType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SegmentSecurityOutcomes</text>
+</g>
+<line x1="2030" y1="1144" x2="2150" y2="1144" class="edge" />
+<line x1="2030" y1="1144" x2="2150" y2="1214" class="edge" />
+<line x1="2030" y1="1144" x2="2150" y2="1284" class="edge" />
+<line x1="2030" y1="1144" x2="2150" y2="1354" class="edge" />
+<line x1="2030" y1="1144" x2="2150" y2="1424" class="edge" />
+<line x1="2030" y1="1144" x2="2150" y2="1494" class="edge" />
+<line x1="2030" y1="1144" x2="2150" y2="1564" class="edge" />
+<g id="el_2450_1130" transform="translate(2450,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The indicator of whether a container is sealed.
+Type: IndType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ContainerSealedInd</text>
+</g>
+<g id="el_2450_1184" transform="translate(2450,1184)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Free text (1 to 38 a/n Characters)
+Type: ScreeningCommentTextType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningComment</text>
+</g>
+<g id="el_2450_1238" transform="translate(2450,1238)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Identifier, as defined by the manufacturer or airport, of the machine that has undertaken the screening activity and determined the screening result.
+Type: ID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningDeviceID</text>
+</g>
+<g id="el_2450_1292" transform="translate(2450,1292)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The result qualifier, identifying the entity that generated the Security Screening Result
+Type: SecurityScreeningEntityID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningEntityID</text>
+</g>
+<g id="el_2450_1346" transform="translate(2450,1346)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the function interaction screening method.
+Type: ScreeningMethodCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningMethodCode</text>
+</g>
+<g id="el_2450_1400" transform="translate(2450,1400)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>An Event that occurs spontaneously about a bag, and to which the organization is required to respond.
+Type: BaggageIncidentType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningResultReason</text>
+</g>
+<line x1="2630" y1="1414" x2="2750" y2="1414" class="edge" />
+<line x1="2630" y1="1414" x2="2750" y2="1484" class="edge" />
+<g id="el_3050_1400" transform="translate(3050,1400)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>Identifier of the incident.
+Type: ID_Type
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BagIncidentID</text>
+</g>
+<g id="el_3050_1454" transform="translate(3050,1454)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the screening alarm.
+Type: ScreeningAlarmCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningAlarmCode</text>
+</g>
+<g id="el_2450_1454" transform="translate(2450,1454)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Code of the bag screening result status.
+Type: SecurityScreeningStatusCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningResultStatusCode</text>
+</g>
+<g id="el_1250_752" transform="translate(1250,752)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Security Number as per RP1739
+Type: SecurityControlNumberType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SecurityNumber</text>
+</g>
+<g id="el_1250_806" transform="translate(1250,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A set of principles or procedures according to which something is done on a particular segment of travel.
+Type: SegmentSecurityControlsType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SegmentSecurityControls</text>
+</g>
+<line x1="1430" y1="820" x2="1550" y2="820" class="edge" />
+<line x1="1430" y1="820" x2="1550" y2="890" class="edge" />
+<line x1="1430" y1="820" x2="1550" y2="960" class="edge" />
+<line x1="1430" y1="820" x2="1550" y2="1030" class="edge" />
+<line x1="1430" y1="820" x2="1550" y2="1100" class="edge" />
+<line x1="1430" y1="820" x2="1550" y2="1170" class="edge" />
+<line x1="1430" y1="820" x2="1550" y2="1240" class="edge" />
+<g id="el_1850_806" transform="translate(1850,806)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The authority to load indicator of the security control. An authority security control is an official permission; sanction from a security context.
+Type: IndType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AuthorityToLoadInd</text>
+</g>
+<g id="el_1850_860" transform="translate(1850,860)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The authority to transport indicator of the security control. An authority security control is an official permission; sanction from a security context.
+Type: IndType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">AuthorityToTransportInd</text>
+</g>
+<g id="el_1850_914" transform="translate(1850,914)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A request by the airline to delete or mark as deleted the record for this bag as no longer expected for the flight.
+Type: BagDeleteRequestIndType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BagDeleteRequestInd</text>
+</g>
+<g id="el_1850_968" transform="translate(1850,968)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A request by the airline to unload a loaded bag, Should be set with the authorization to load set to NO.
+Type: BagRemovalRequestIndType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BagRemovalRequestInd</text>
+</g>
+<g id="el_1850_1022" transform="translate(1850,1022)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Determines whether bag is authorized to load
+Type: BagTagStatusCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BagTagStatusCode</text>
+</g>
+<g id="el_1850_1076" transform="translate(1850,1076)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A transportation of a passenger on a Dated Operating Segment.
+Type: PaxSegmentType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">PaxStatus</text>
+</g>
+<line x1="2030" y1="1090" x2="2150" y2="1090" class="edge" />
+<line x1="2030" y1="1090" x2="2150" y2="1160" class="edge" />
+<line x1="2030" y1="1090" x2="2150" y2="1230" class="edge" />
+<line x1="2030" y1="1090" x2="2150" y2="1300" class="edge" />
+<line x1="2030" y1="1090" x2="2150" y2="1370" class="edge" />
+<g id="el_2450_1076" transform="translate(2450,1076)">
+<rect width="180" height="28" y="0" x="0" class="el ma" style="">
+<title>The code of the passenger's boarding status.
+Type: BoardingStatusCodeType
+Occurs: [1,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">BoardingStatusCode</text>
+</g>
+<g id="el_2450_1130" transform="translate(2450,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>This is the check in sequence number for a passenger on a passenger segment
+Type: OrdinalType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">CheckInSeqNumber</text>
+</g>
+<g id="el_2450_1184" transform="translate(2450,1184)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>A code which identifies an exception to being able to allocate a seat to the passenger pre gate. Used in the boarding pass to optionally specify 'GATE' or 'STBY' if a seat has not been allocated. 
+ If a seat row and column have been specified then this attributes content would not be populated on the boarding pass.
+Type: SeatAllocationExceptionCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SeatAllocationExceptionCode</text>
+</g>
+<g id="el_2450_1238" transform="translate(2450,1238)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The seat number of this service offer. Not filled in when jump seat, which is identified through the Baggage Segment Exception.
+Type: SeatID_Type
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SeatID</text>
+</g>
+<g id="el_2450_1292" transform="translate(2450,1292)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Indicates a passenger may be subject to more extensive security check and is at increased risk to no-show for flight.
+Type: IndType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">SecurityProfileStatusInd</text>
+</g>
+<g id="el_1850_1130" transform="translate(1850,1130)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>The Screening Instruction of the security control. Security instruction control is a security control or a direction or order in a security context.
+Type: ScreeningInstructionCodeType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">ScreeningInstructionCode</text>
+</g>
+<g id="el_650_104" transform="translate(650,104)">
+<rect width="180" height="28" y="0" x="0" class="el op" style="stroke-dasharray:5 5;">
+<title>Payload information for this notification message.
+Type: dsig:SignatureType
+Occurs: [0,1]</title>
+</rect>
+<text x="8" y="18" class="eltext">Signature</text>
+</g>
+</svg>
